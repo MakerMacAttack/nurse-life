@@ -8,3 +8,5 @@ const Post = new Schema(
   },
   { timestamps: true }
 );
+
+// schema for posts
