@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Header(props) {
+export default function Layout(props) {
   return <div></div>;
 }
