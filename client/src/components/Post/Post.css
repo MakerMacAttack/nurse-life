@@ -1,0 +1,30 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  box-shadow: 0px 0px 3px 1px solid black;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.post-name {
+  font-size: 24px;
+  padding: 10px;
+}
+
+.post-content {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.post-imgURL {
+  font-size: 10px;
+}
+
+@media (max-width: 500px) {
+  .post {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
