@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PostCreate.css";
 import { createPost } from "../../services/Posts";
 import { Redirect } from "react-router-dom";
@@ -31,36 +31,36 @@ const PostCreate = (props) => {
   }
 
   return (
-    <Layout user={props.user}>
-      <form className="post-form" onSubmit={handleSubmit}>
-        <input
-          className="input-name"
-          placeholder="Name"
-          value={post.name}
-          name="name"
-          required
-          autoFocus
-          onChange={handleChange}
-        />
-        <input
-          className="input-content"
-          placeholder="Content"
-          value={post.content}
-          name="content"
-          onChange={handleChange}
-        />
-        <input
-          className="input-image-link"
-          placeholder="ImageLink"
-          value={post.imgURL}
-          name="imgURL"
-          onChange={handleChange}
-        />
-        <button type="submit" className="post-button">
-          Post
-        </button>
-      </form>
-    </Layout>
+    // <Layout user={props.user}>
+    <form className="post-form" onSubmit={handleSubmit}>
+      <input
+        className="input-name"
+        placeholder="Name"
+        value={post.name}
+        name="name"
+        required
+        autoFocus
+        onChange={handleChange}
+      />
+      <input
+        className="input-content"
+        placeholder="Content"
+        value={post.content}
+        name="content"
+        onChange={handleChange}
+      />
+      <input
+        className="input-image-link"
+        placeholder="ImageLink"
+        value={post.imgURL}
+        name="imgURL"
+        onChange={handleChange}
+      />
+      <button type="submit" className="post-button">
+        Post
+      </button>
+    </form>
+    // </Layout>
   );
 };
 
