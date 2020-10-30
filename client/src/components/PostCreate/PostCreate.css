@@ -1,0 +1,47 @@
+.post-form {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 50px;
+  padding-top: 50px;
+  padding-right: 50px;
+}
+
+input:focus,
+content:focus {
+  outline: none;
+}
+
+.container {
+  box-shadow: 2px 2px 5px #000000;
+  border-radius: 4px;
+  margin-left: 400px;
+  margin-right: 400px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.post-button {
+  justify-content: center;
+  background-color: #199ff3;
+  color: #ffffff;
+  border-radius: 4px;
+  margin: 15px;
+}
+
+.post-button:hover {
+  justify-content: center;
+  color: #000000;
+}
+
+.content-area {
+  margin: 10px;
+}
+
+.input-content {
+  padding: 10px;
+  border-radius: 8px;
+  width: 34vw;
+}
