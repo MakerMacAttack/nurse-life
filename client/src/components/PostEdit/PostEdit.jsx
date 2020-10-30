@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./PostEdit.css";
 import { useParams, Redirect } from "react-router-dom";
-import { getPost, updatePost } from "../../services/posts";
+import { getPost, updatePost } from "../../services/Posts.js";
 
 
 const PostEdit = (props) => {
@@ -33,7 +33,7 @@ const PostEdit = (props) => {
     setUpdated(updated);
   };
   if (isUpdated) {
-    return <Redirect to={`/posts/${props.match.params.id}`} />;
+    return <Redirect to={`/`} />;
   }
   
   return (

@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Post.css";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { deletePost } from "../../services/Posts.js";
 
 const Post = (props) => {
+
+  const [post, setPost] = useState('')
+  
+  
   return (
     <>
       <h2 className="post-name">{props.name}</h2>
@@ -10,9 +15,14 @@ const Post = (props) => {
       <h4 className="post-imgURL">{props.imgURL}</h4>
       <div>
         <button className="edit-button">
-          <Link className="edit-link" to={`/posts/${props._id}/edit`}>
+          <Link className="edit-link" to={`/posts/${props.id}/edit`}>
             Edit
           </Link>
+        </button>
+      </div>
+      <div className="delete-button">
+        <button className="delete-button" onClick={() => deletePost(props.id)}>
+          Delete
         </button>
       </div>
     </>
