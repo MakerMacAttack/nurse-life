@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import { deletePost } from "../../services/Posts.js";
 
 const Post = (props) => {
+  function handleDelete() {
+    deletePost(props.id);
+    props.set((prev) => !prev);
+  }
 
-  const [post, setPost] = useState('')
-  
-  
   return (
     <>
       <h2 className="post-name">{props.name}</h2>
@@ -21,7 +22,7 @@ const Post = (props) => {
         </button>
       </div>
       <div className="delete-button">
-        <button className="delete-button" onClick={() => deletePost(props.id)}>
+        <button className="delete-button" onClick={handleDelete}>
           Delete
         </button>
       </div>

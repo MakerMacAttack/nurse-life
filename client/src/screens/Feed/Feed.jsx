@@ -17,7 +17,7 @@ export default function Feed(props) {
 
   return (
     <div>
-      <PostCreate />
+      <PostCreate set={setTrigger} />
       <PostList posts={posts} set={setTrigger} />
     </div>
   );
