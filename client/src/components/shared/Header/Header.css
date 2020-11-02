@@ -1,0 +1,18 @@
+.header {
+  background-color: #140832;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  width: 250px;
+  height: 140px;
+  padding-left: 100px;
+}
+
+.account {
+  justify-content: flex-end;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
