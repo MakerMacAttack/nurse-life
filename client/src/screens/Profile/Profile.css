@@ -1,0 +1,8 @@
+#pic-box {
+  display: flex;
+  flex-direction: column;
+}
+
+#edit-pic {
+  size: 2px;
+}
