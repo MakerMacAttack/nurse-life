@@ -3,7 +3,6 @@ import "./PostEdit.css";
 import { useParams, Redirect } from "react-router-dom";
 import { getPost, updatePost } from "../../services/Posts.js";
 
-
 const PostEdit = (props) => {
   const [post, setPost] = useState({
     name: "",
@@ -35,7 +34,7 @@ const PostEdit = (props) => {
   if (isUpdated) {
     return <Redirect to={`/`} />;
   }
-  
+
   return (
     <div className="post-edit">
       <form className="edit-form" onSubmit={handleSubmit}>
