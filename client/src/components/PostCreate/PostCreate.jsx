@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./PostCreate.css";
 import { createPost } from "../../services/Posts";
+import { useHistory } from "react-router-dom";
 
 const PostCreate = (props) => {
   const [post, setPost] = useState({
@@ -8,6 +9,8 @@ const PostCreate = (props) => {
     content: "",
     imgURL: "",
   });
+
+  let history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,6 +23,12 @@ const PostCreate = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await createPost(post);
+    setPost({
+      name: "",
+      content: "",
+      imgURL: "",
+    })
+    history.push("/");
     props.set((prev) => !prev);
   };
 
