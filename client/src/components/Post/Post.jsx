@@ -19,7 +19,7 @@ const Post = (props) => {
         <div>
           <h2 className="post-name">{name}</h2>
           <h3 className="post-content">{content}</h3>
-          <img src={imgURL} alt="Image with post" />
+          <img className="post-image" src={imgURL} alt="Image with post" />
         </div>
       );
     } else {
