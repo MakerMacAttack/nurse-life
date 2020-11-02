@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./PostCreate.css";
 import { createPost } from "../../services/Posts";
-import { Redirect } from "react-router-dom";
 
 const PostCreate = (props) => {
   const [post, setPost] = useState({
@@ -9,8 +8,6 @@ const PostCreate = (props) => {
     content: "",
     imgURL: "",
   });
-
-  const [isCreated, setCreated] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,16 +19,11 @@ const PostCreate = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const created = await createPost(post);
-    setCreated({ created });
+    await createPost(post);
+    props.set((prev) => !prev);
   };
 
-  if (isCreated) {
-    return <Redirect to={`/posts`} />;
-  }
-
   return (
-    // <Layout user={props.user}>
     <form className="post-form" onSubmit={handleSubmit}>
       <div className="container">
         <div className="content-area">
@@ -68,7 +60,6 @@ const PostCreate = (props) => {
         </button>
       </div>
     </form>
-    // </Layout>
   );
 };
 
