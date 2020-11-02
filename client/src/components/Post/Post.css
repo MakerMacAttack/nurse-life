@@ -1,4 +1,4 @@
-.post {
+.post-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,17 +9,64 @@
 }
 
 .post-name {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 2px;
+  box-shadow: 4px 4px 6px 0;
+  margin: 0 auto;
+  width: 50%;
   font-size: 24px;
   padding: 10px;
+  margin-top: 20px;
 }
 
 .post-content {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 2px;
+  box-shadow: 4px 4px 6px 0;
+  margin: 0 auto;
+  width: 50%;
   font-size: 18px;
   padding: 10px;
+  margin-top: 20px;
 }
 
-.post-imgURL {
-  font-size: 10px;
+.post-image {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 2px;
+  box-shadow: 4px 4px 6px 0;
+  margin: 0 auto;
+  width: 50%;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.edit-button {
+  justify-content: center;
+  background-color: #199ff3;
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.delete-button {
+  justify-content: center;
+  /* background-color: #199ff3; */
+  /* color: #ffffff; */
+  border-radius: 4px;
+  margin-top: 05px;
+}
+
+.edit-button:hover {
+  justify-content: center;
+  color: #000000;
+}
+
+.delete-button:hover {
+  justify-content: center;
+  color: #000000;
 }
 
 @media (max-width: 500px) {
