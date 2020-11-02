@@ -1,10 +1,17 @@
 import React from "react";
+import "./Profile.css";
 
 export default function Profile(props) {
   return (
     <div>
-      <img src="" alt="User profile picture" />
-      <p>Edit Profile Picture</p>
+      <div id="pic-box">
+        <img
+          id="profile-pic"
+          src="../../images/ProfilePic.png"
+          alt="User profile picture"
+        />
+        <p id="edit-pic">Edit Profile Picture</p>
+      </div>
       <h1>My Account</h1>
       <hr />
       <form className="update-profile">
