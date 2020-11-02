@@ -4,16 +4,39 @@ import { Link } from "react-router-dom";
 import { deletePost } from "../../services/Posts.js";
 
 const Post = (props) => {
+  const { name, content, imgURL } = props;
+
   function handleDelete() {
     deletePost(props.id);
     props.set((prev) => !prev);
   }
 
+  let fullPost = <h1>Something went wrong</h1>;
+
+  function compilePost() {
+    if (/.+\.(jpg|jpeg|png|apng|gif|bmp|svg)$/.test(imgURL)) {
+      fullPost = (
+        <div>
+          <h2 className="post-name">{name}</h2>
+          <h3 className="post-content">{content}</h3>
+          <img src={imgURL} alt="Image with post" />
+        </div>
+      );
+    } else {
+      fullPost = (
+        <div>
+          <h2 className="post-name">{name}</h2>
+          <h3 className="post-content">{content}</h3>
+        </div>
+      );
+    }
+  }
+
+  compilePost();
+
   return (
     <>
-      <h2 className="post-name">{props.name}</h2>
-      <h3 className="post-content">{props.content}</h3>
-      <h4 className="post-imgURL">{props.imgURL}</h4>
+      {fullPost}
       <div>
         <button className="edit-button">
           <Link className="edit-link" to={`/posts/${props.id}/edit`}>
