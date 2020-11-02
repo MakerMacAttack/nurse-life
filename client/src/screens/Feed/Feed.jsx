@@ -5,6 +5,7 @@ import { getPosts } from "../../services/Posts";
 
 export default function Feed(props) {
   const [posts, setPosts] = useState([]);
+  const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -12,12 +13,12 @@ export default function Feed(props) {
       setPosts(posts);
     };
     fetchPosts();
-  }, []);
+  }, [trigger]);
 
   return (
     <div>
       <PostCreate />
-      <PostList posts={posts} />
+      <PostList posts={posts} set={setTrigger} />
     </div>
   );
 }
