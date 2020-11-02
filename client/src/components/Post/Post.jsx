@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import "./Post.css";
 import { Link } from "react-router-dom";
 import { deletePost } from "../../services/Posts.js";
+import { useHistory } from "react-router-dom";
 
 const Post = (props) => {
   const { name, content, imgURL } = props;
 
-  function handleDelete() {
-    deletePost(props.id);
+  let history = useHistory();
+
+  async function handleDelete() {
+    await deletePost(props.id);
     props.set((prev) => !prev);
   }
 

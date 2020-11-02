@@ -5,7 +5,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const getPosts = async (req, res) => {
     try {
-        const posts = await Post.find()
+      const posts = await Post.find().sort([['updatedAt', 'descending']])
         res.json(posts)
     } catch (error) {
         res.status(500).json({ error: error.message })
