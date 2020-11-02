@@ -6,7 +6,6 @@ export default function Profile(props) {
       <img src="" alt="User profile picture" />
       <p>Edit Profile Picture</p>
       <h1>My Account</h1>
-      <p>Save</p>
       <hr />
       <form className="update-profile">
         <h2>Name</h2>
@@ -23,6 +22,30 @@ export default function Profile(props) {
         </select>
         <label htmlFor="birthday">Date of Birth</label>
         <input type="date" id="birthday" name="birthday" />
+        <label htmlFor="workplace">Institution/Work Place</label>
+        <input id="workplace" name="workplace" placeholder="Where you work" />
+        <label htmlFor="city">City</label>
+        <input id="city" name="city" placeholder="City" />
+        <label htmlFor="state">State</label>
+        <input id="state" name="state" placeholder="State" />
+        <label htmlFor="phone">Phone Number</label>
+        <input
+          id="phone"
+          type="tel"
+          name="phone"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          placeholder="314-159-2653"
+        />
+        <label htmlFor="email">E-mail Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@domain.com"
+        />
+        <button type="submit" className="save-profile-button">
+          Save
+        </button>
       </form>
     </div>
   );
