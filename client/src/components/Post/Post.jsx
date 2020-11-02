@@ -16,7 +16,7 @@ const Post = (props) => {
   function compilePost() {
     if (/.+\.(jpg|jpeg|png|apng|gif|bmp|svg)$/.test(imgURL)) {
       fullPost = (
-        <div>
+        <div className="post-container"> 
           <h2 className="post-name">{name}</h2>
           <h3 className="post-content">{content}</h3>
           <img className="post-image" src={imgURL} alt="Image with post" />
