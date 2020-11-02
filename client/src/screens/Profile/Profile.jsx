@@ -7,7 +7,7 @@ export default function Profile(props) {
       <div id="pic-box">
         <img
           id="profile-pic"
-          src="../../images/ProfilePic.png"
+          src="./assets/images/ProfilePic.png"
           alt="User profile picture"
         />
         <p id="edit-pic">Edit Profile Picture</p>
