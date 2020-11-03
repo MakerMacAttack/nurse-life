@@ -7,8 +7,8 @@
 .signInLink {
   color: white;
   font-weight: 400;
-  font-size: xx-large;
-  margin-right: 8.5%;
+  font-size: large;
+  margin-right: 7.5%;
   margin-top: 1%;
 }
 
@@ -36,21 +36,33 @@
   width: 70vw;
 }
 .logo {
-  height: 200px;
+  height: 140px;
   padding: 30px;
 }
 
 .searchBar {
-  height: 70px;
+  height: 50px;
   width: 50%;
   border-radius: 10px;
 }
 
 .searchBar::-webkit-input-placeholder {
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.accounts-div,
+.favorites-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.favoritesLink,
+.accountLink {
+  color: white;
+  padding: 5px;
 }
 
 .account,
 .favorites {
-  height: 70px;
+  height: 50px;
 }
