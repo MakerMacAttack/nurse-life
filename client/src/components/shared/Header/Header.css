@@ -1,18 +1,36 @@
 .header {
   background-color: #140832;
+  display: flex;
+  flex-direction: column;
+}
+
+.signInLink {
+  color: white;
+  font-weight: light;
+}
+
+.nav-top {
+  display: flex;
+}
+
+.nav-bottom {
+  display: flex;
 }
 
 .logo {
-  display: flex;
-  justify-content: flex-start;
-  width: 250px;
-  height: 140px;
+  /* display: flex;
+  justify-content: flex-start; */
+  /* width: 250px; */
+  height: 100px;
   padding-left: 100px;
 }
 
-.account {
-  justify-content: flex-end;
-  width: 60px;
-  height: 60px;
+.account,
+.messages,
+.meditation,
+.favorites {
+  /* justify-content: flex-end; */
+  height: 40px;
   margin-bottom: 10px;
+  padding: 10px;
 }
