@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const postsRoutes = require('./routes/posts');
 const db = require('./db/connection');
+const usersRoutes = require('./routes/users');
 const PORT = process.env.PORT || 3000
 
 const app = express();
@@ -13,6 +14,7 @@ app.use(bodyParser.json())
 app.use(logger('dev'))
 
 app.use('/api', postsRoutes);
+app.use('/api', usersRoutes);
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
