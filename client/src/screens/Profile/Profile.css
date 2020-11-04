@@ -9,9 +9,9 @@
 
 .profile-master2 {
   width: 80vw;
-  height: 80vh;
+  height: 90vh;
   border-radius: 2px;
-  box-shadow: 4px 4px 6px 0;
+  box-shadow: 1px 1px 10px 0;
   padding: 20px;
 }
 
@@ -62,6 +62,7 @@
 
 .Name {
   text-align: left;
+  margin: 0 0 0 24px;
 }
 
 .profile-updater {
@@ -70,7 +71,6 @@
   width: 80vw;
   margin: 0 auto;
   justify-content: space-evenly;
-  
 }
 
 .profile-name-box {
@@ -83,19 +83,29 @@
 }
 
 .labelFirst {
+  font-family: Helvetica;
+  color: grey;
+  margin: 0 260px 0 0;
   grid-area: labelFirst;
 }
 
 .labelSecond {
+  font-family: Helvetica;
+  color: grey;
+  Margin: 0 290px 0 0;
   grid-area: labelLast;
 }
 
 .first {
+  padding: 10px;
+  width: 300px;
   border-radius: 05px;
   grid-area: inputFirst;
 }
 
 .last {
+  padding: 10px;
+  width: 300px;
   border-radius: 05px;
   grid-area: inputLast;
 }
