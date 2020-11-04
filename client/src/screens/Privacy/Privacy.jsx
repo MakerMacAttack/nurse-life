@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { updateUser } from "../../services/Users";
+// import { updateUser } from "../../services/Users";
 
 export default function Privacy(props) {
-  const [anonymity, setAnonymity] = useState(props.user.privacy.anonymity);
+  // const [anonymity, setAnonymity] = useState(props.user.privacy.anonymity);
 
   const [user, setUser] = useState({
     old: "",

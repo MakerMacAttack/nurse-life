@@ -63,7 +63,7 @@ const PostEdit = (props) => {
           onChange={handleChange}
         />
         <button type="submit" className="save-button">
-          Save
+          Save!
         </button>
       </form>
     </div>
