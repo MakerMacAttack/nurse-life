@@ -41,17 +41,23 @@
 }
 
 .save-profile-button {
-  font-size: 15px;
   justify-self: end;
-  border-radius: 4px;
   font-family: Helvetica;
   position: relative;
 }
 
 .save-profile-button2 {
+  font-size: 15px;
   position: absolute;
   bottom: 10px;
   right: 20px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
+
+.save-profile-button2:hover {
+  color: #199ff3;
 }
 
 .Name {
