@@ -50,6 +50,7 @@
   font-size: 15px;
   position: absolute;
   bottom: 10px;
+  color: grey;
   right: 20px;
   text-decoration: none;
   background-color: transparent;
@@ -100,20 +101,48 @@
   padding: 10px;
   width: 300px;
   border-radius: 05px;
+  border-color: lightgrey;
   grid-area: inputFirst;
+}
+
+input { 
+  text-align: center; 
 }
 
 .last {
   padding: 10px;
   width: 300px;
   border-radius: 05px;
+  border-color: lightgrey;
   grid-area: inputLast;
 }
 
 .profile-gender-box {
-  display: flex;
+  display: grid;
   margin: 20px;
+  gap: 20px;
+  grid-template-areas: 
+  "inputGender" 
+  "labelGender" ;
 }
+
+.labelGender {
+  font-family: Helvetica;
+  color: black;
+  margin: 0 700px 0 0;
+  grid-area: inputGender;
+}
+
+.gender {
+  padding: 10px;
+  width: 300px;
+  margin-top: 05px;
+  text-align: center; 
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelGender;
+}
+
 
 .profile-bday-box {
   display: flex;
