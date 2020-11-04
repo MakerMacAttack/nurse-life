@@ -30,15 +30,12 @@ export default function Profile(props) {
               <h2>Name</h2>
             </div>
             <div className="profile-name-box">
-              <label className="labelFirst" htmlFor="first">First</label>
+              <label className="labelFirst" htmlFor="first">First Name</label>
               <input className="first" name="first" />
-              <label className="labelSecond" htmlFor="last">Last</label>
+              <label className="labelSecond" htmlFor="last">Last Name</label>
               <input className="last" name="last" />
             </div>
-            {/* <div className="First-Last-Name">
-              <p> First Name </p> <p> Last Name </p>
-            </div> */}
-
+            
             <div className="profile-gender-box">
               <label htmlFor="gender">Gender</label>
               <select id="gender" name="gender">

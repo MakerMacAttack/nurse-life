@@ -70,6 +70,7 @@
   width: 80vw;
   margin: 0 auto;
   justify-content: space-evenly;
+  
 }
 
 .profile-name-box {
@@ -90,20 +91,13 @@
 }
 
 .first {
+  border-radius: 05px;
   grid-area: inputFirst;
 }
 
 .last {
+  border-radius: 05px;
   grid-area: inputLast;
-}
-
-
-.First-Last-Name {
-  margin: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-content: flex-start;
-  flex-wrap: wrap;
 }
 
 .profile-gender-box {
