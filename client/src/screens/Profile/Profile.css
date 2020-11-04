@@ -1,3 +1,19 @@
+.profile-master {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 55px;
+}
+
+.profile-master2 {
+  width: 80vw;
+  height: 80vh;
+  border-radius: 2px;
+  box-shadow: 4px 4px 6px 0;
+  padding: 20px;
+}
 
 .pic-box {
   display: flex;
@@ -19,14 +35,23 @@
   display: flex;
 }
 
+.profile-header-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .save-profile-button {
   font-size: 15px;
-  float: right;
-  background-color: #199ff3;
+  justify-self: end;
   border-radius: 4px;
-  margin: 15px;
   font-family: Helvetica;
-  margin: 0 auto;
+  position: relative;
+}
+
+.save-profile-button2 {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
 }
 
 .Name {
@@ -43,11 +68,29 @@
 
 .profile-name-box {
   margin: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-content: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 20px;
+  grid-template-areas: 
+  "inputFirst inputLast" 
+  "labelFirst labelLast" ;
 }
+
+.labelFirst {
+  grid-area: labelFirst;
+}
+
+.labelSecond {
+  grid-area: labelLast;
+}
+
+.first {
+  grid-area: inputFirst;
+}
+
+.last {
+  grid-area: inputLast;
+}
+
 
 .First-Last-Name {
   margin: 20px;
