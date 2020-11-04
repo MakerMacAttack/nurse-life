@@ -1,50 +1,78 @@
-#pic-box {
+
+.pic-box {
   display: flex;
   flex-direction: column;
   max-width: 100px;
 }
 
-#edit-pic {
+.edit-pic {
   font-size: 8px;
+  font-family: Helvetica;
 }
 
-#profile-pic {
+.profile-pic {
   max-width: 100px;
   max-height: 100px;
 }
 
-#profile-header {
+.profile-header {
   display: flex;
 }
 
-#profile-updater {
+.save-profile-button {
+  font-size: 15px;
+  float: right;
+  background-color: #199ff3;
+  border-radius: 4px;
+  margin: 15px;
+  font-family: Helvetica;
+  margin: 0 auto;
+}
+
+.Name {
+  text-align: left;
+}
+
+.profile-updater {
   display: flex;
   flex-direction: column;
   width: 80vw;
   margin: 0 auto;
+  justify-content: space-evenly;
 }
 
-#profile-name-box {
+.profile-name-box {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.First-Last-Name {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.profile-gender-box {
   display: flex;
   margin: 20px;
 }
 
-#profile-gender-box {
+.profile-bday-box {
   display: flex;
   margin: 20px;
 }
 
-#profile-bday-box {
+.profile-work-box {
   display: flex;
   margin: 20px;
 }
 
-#profile-work-box {
-  display: flex;
-  margin: 20px;
-}
-
-#profile-contact-box {
+.profile-contact-box {
   display: flex;
   margin: 20px;
 }
