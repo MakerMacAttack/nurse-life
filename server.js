@@ -1,10 +1,10 @@
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const postsRoutes = require('./routes/posts');
+const db = require('./db/connection');
 const usersRoutes = require('./routes/users');
-const db = require('./db/connection')
 const PORT = process.env.PORT || 3000
 
 const app = express();
