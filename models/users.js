@@ -24,7 +24,15 @@ const User = new Schema(
     contact:
     {
       phone: { type: String, required: false },
-      email: { type: String, required: true }
+      email: { type: String, required: true },
+    },
+    anonymity:
+    {
+      anonymous: {type: Boolean, required: false}
+    },
+    location:
+    {
+      locationServices: {type: Boolean, required: false}
     }
   },
   { timestamps: true }
