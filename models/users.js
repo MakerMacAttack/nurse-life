@@ -26,12 +26,9 @@ const User = new Schema(
       phone: { type: String, required: false },
       email: { type: String, required: true },
     },
-    anonymity:
+    privacy:
     {
-      anonymous: {type: Boolean, required: false}
-    },
-    location:
-    {
+      anonymous: { type: Boolean, required: false },
       locationServices: {type: Boolean, required: false}
     }
   },

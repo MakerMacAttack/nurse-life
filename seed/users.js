@@ -31,12 +31,9 @@ const main = async () => {
           phone: "212-555-1234",
           email: "me@domain.ext"
         },
-        anonymity:
+        privacy:
         {
           anonymous: false,
-        },
-        location:
-        {
           locationServices: false,
         }
       }
