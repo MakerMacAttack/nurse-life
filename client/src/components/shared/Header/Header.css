@@ -1,0 +1,68 @@
+.header {
+  background-color: #140832;
+  display: flex;
+  flex-direction: column;
+}
+
+.signInLink {
+  color: white;
+  font-weight: 400;
+  font-size: large;
+  margin-right: 7.5%;
+  margin-top: 1%;
+}
+
+.nav-top {
+  height: 25%;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-bottom {
+  display: flex;
+  height: 75%;
+}
+
+.nav-bottom-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 30vw;
+}
+
+.nav-bottom-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+}
+.logo {
+  height: 140px;
+  padding: 30px;
+}
+
+.searchBar {
+  height: 50px;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.searchBar::-webkit-input-placeholder {
+  font-size: 20px;
+}
+
+.accounts-div,
+.favorites-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.favoritesLink,
+.accountLink {
+  color: white;
+  padding: 5px;
+}
+
+.account,
+.favorites {
+  height: 50px;
+}
