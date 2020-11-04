@@ -3,12 +3,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const postsRoutes = require('./routes/posts');
-<<<<<<< HEAD
 const db = require('./db/connection');
-=======
 const usersRoutes = require('./routes/users');
-const db = require('./db/connection')
->>>>>>> 8a7336a81f664bde63e5f40119199f04e247f3b1
 const PORT = process.env.PORT || 3000
 
 const app = express();
