@@ -62,7 +62,7 @@ const PostEdit = (props) => {
           name="image"
         />
         <button type="submit" className="save-button">
-          Save
+          Save!
         </button>
       </form>
     </div>
