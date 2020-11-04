@@ -7,6 +7,7 @@ import { Route, Switch } from "react-router-dom";
 import PostEdit from "./components/PostEdit/PostEdit";
 import PostCreate from "./components/PostCreate/PostCreate";
 import SignIn from "./components/SignIn/SignIn";
+import Privacy from "./components/Privacy/Privacy";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route exact path="/posts/:id/edit" component={PostEdit} />
         <Route path="/profile" component={Profile} />
         <Route path="/sign-in" component={SignIn} />
+        <Route path="/privacy" component={Privacy} />
       </Switch>
     </div>
   );
