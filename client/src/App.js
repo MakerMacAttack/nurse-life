@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Feed from "./screens/Feed/Feed";
 import Profile from "./screens/Profile/Profile";
 import Header from "./components/shared/Header/Header";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import PostEdit from "./components/PostEdit/PostEdit";
 import PostCreate from "./components/PostCreate/PostCreate";
 import SignIn from "./components/SignIn/SignIn";
 import Privacy from "./screens/Privacy/Privacy";
+import { getUser } from './services/Users'
 
 const App = () => {
+  const [user, getUser] = useState(null)
+
+  const history = useHistory()
+
+  if (user === null) {
+    history.push("/sign-in")
+  }
+
   return (
     <div className="App">
       <Header />
