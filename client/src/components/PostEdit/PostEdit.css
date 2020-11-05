@@ -1,0 +1,11 @@
+.post-edit {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.edit-form {
+  border: solid 3px black;
+}

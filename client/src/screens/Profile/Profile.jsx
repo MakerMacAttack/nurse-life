@@ -9,7 +9,7 @@ export default function Profile(props) {
           <img
             id="profile-pic"
             src="./assets/images/ProfilePic.png"
-            alt="User profile picture"
+            alt="User profile"
           />
           <p id="edit-pic">Edit Profile Picture</p>
         </div>
