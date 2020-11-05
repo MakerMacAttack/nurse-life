@@ -39,7 +39,7 @@ const PostEdit = (props) => {
     <div className="post-edit">
       <form className="edit-form" onSubmit={handleSubmit}>
         <input
-          className="input-name"
+          className="post-edit-input-name"
           placeholder=""
           value={post.name}
           name="name"
@@ -48,7 +48,7 @@ const PostEdit = (props) => {
           onChange={handleChange}
         />
         <input
-          className="input-content"
+          className="post-edit-input-content"
           placeholder=""
           value={post.content}
           name="content"
@@ -56,13 +56,13 @@ const PostEdit = (props) => {
           onChange={handleChange}
         />
         <input
-          className="edit-img"
+          className="post-edit-edit-img"
           placeholder=""
           value={post.imgURL}
           name="imgURL"
           onChange={handleChange}
         />
-        <button type="submit" className="save-button">
+        <button type="submit" className="post-edit-save-button">
           Save!
         </button>
       </form>
