@@ -78,9 +78,9 @@
   margin: 20px;
   display: grid;
   gap: 20px;
-  grid-template-areas: 
-  "inputFirst inputLast" 
-  "labelFirst labelLast" ;
+  grid-template-areas:
+    "inputFirst inputLast"
+    "labelFirst labelLast";
 }
 
 .labelFirst {
@@ -93,7 +93,7 @@
 .labelSecond {
   font-family: Helvetica;
   color: grey;
-  Margin: 0 290px 0 0;
+  margin: 0 290px 0 0;
   grid-area: labelLast;
 }
 
@@ -105,8 +105,8 @@
   grid-area: inputFirst;
 }
 
-input { 
-  text-align: center; 
+input {
+  text-align: center;
 }
 
 .last {
@@ -121,15 +121,15 @@ input {
   display: grid;
   margin: 20px;
   gap: 20px;
-  grid-template-areas: 
-  "inputGender" 
-  "labelGender" ;
+  grid-template-areas:
+    "inputGender"
+    "labelGender";
 }
 
 .labelGender {
   font-family: Helvetica;
   color: black;
-  text-align: center; 
+  text-align: center;
   margin: 0 700px 0 0;
   grid-area: inputGender;
 }
@@ -146,15 +146,15 @@ input {
 .profile-bday-box {
   display: grid;
   margin: 20px;
-  grid-template-areas: 
-  "inputBirthday" 
-  "labelBirthday" ;
+  grid-template-areas:
+    "inputBirthday"
+    "labelBirthday";
 }
 
 .labelBirthday {
   font-family: Helvetica;
   color: black;
-  text-align: center; 
+  text-align: center;
   margin: 0 650px 0 0;
   grid-area: inputBirthday;
 }
@@ -172,29 +172,29 @@ input {
 .profile-work-box {
   display: grid;
   margin: 20px;
-  grid-template-areas: 
-  " a b " 
-  " c .";
+  grid-template-areas:
+    " a b "
+    " c .";
 }
 
 .labelWorkplace {
   font-family: Helvetica;
-  color:black;
-  text-align: left; 
+  color: black;
+  text-align: left;
   grid-area: labelWorkplace;
 }
 
 .labelCity {
   font-family: Helvetica;
-  color:black;
-  text-align: left; 
+  color: black;
+  text-align: left;
   grid-area: labelCity;
 }
 
 .labelState {
   font-family: Helvetica;
   color: black;
-  text-align: left; 
+  text-align: left;
   grid-area: labelState;
 }
 
@@ -255,22 +255,22 @@ input {
 .profile-contact-box {
   display: grid;
   margin: 20px;
-  grid-template-areas: 
-  " x y " 
-  " . . " ;
+  grid-template-areas:
+    " x y "
+    " . . ";
 }
 
 .labelPhone {
   font-family: Helvetica;
-  color:black;
-  text-align: left; 
+  color: black;
+  text-align: left;
   grid-area: labelPhone;
 }
 
 .labelEmail {
   font-family: Helvetica;
-  color:black;
-  text-align: left; 
+  color: black;
+  text-align: left;
   grid-area: labelEmail;
 }
 

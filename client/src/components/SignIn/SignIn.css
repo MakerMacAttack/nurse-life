@@ -3,7 +3,7 @@
   border-radius: 6px;
   padding: 12px 8px;
   color: #ffffff;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .forgotPassword {
@@ -20,18 +20,22 @@
 
 .emailSignIn {
   border-radius: 6px;
+  border-color: lightgrey;
   padding: 12px;
   padding-left: 10px;
   padding-right: 60px;
   margin: 4px;
+  text-align: left;
 }
 
 .passwordSignIn {
   border-radius: 6px;
+  border-color: lightgrey;
   padding: 12px;
   padding-left: 10px;
   padding-right: 60px;
   margin: 8px;
+  text-align: left;
 }
 
 hr {
@@ -52,15 +56,16 @@ hr {
   height: 100vh;
 }
 
-.logoBio {
+/* .logoBio {
   display: flex;
   flex-direction: column;
   width: 40%;
-  justify-content: flex-end;
-}
+  justify-content: flex-end; */
+/* } */
 
 .userInfoArea {
   flex-direction: column;
+  margin-top: 15%;
   display: flex;
   width: 60%;
   justify-content: left;
@@ -68,18 +73,31 @@ hr {
 }
 
 .divBox {
-  width: 25%;
-  height: 60%;
+  width: 20%;
+  height: 50%;
+  margin-top: 50px;
   background-color: white;
   border-radius: 6px;
   border-color: #000000;
-  box-shadow: 4px 4px 8px grey;
+  box-shadow: 2px 2px 6px grey;
   display: flex;
   justify-content: center;
 }
 
 .logoBox {
   width: 50%;
-  display: flex;
-  justify-content: right;
+  display: grid;
+  grid-template-areas: " a b " " . . ";
+}
+
+.logoDiv {
+  grid-area: a;
+  margin-left: 400px;
+}
+
+.bioNurses {
+  grid-area: b;
+  margin-left: 380px;
+  margin-right: 32px;
+  margin-top: -30px;
 }
