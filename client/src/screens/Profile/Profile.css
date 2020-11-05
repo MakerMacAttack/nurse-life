@@ -180,52 +180,76 @@ input {
 .labelWorkplace {
   font-family: Helvetica;
   color:black;
-  text-align: center; 
+  text-align: left; 
   grid-area: labelWorkplace;
 }
 
 .labelCity {
   font-family: Helvetica;
   color:black;
+  text-align: left; 
   grid-area: labelCity;
 }
 
 .labelState {
   font-family: Helvetica;
   color: black;
-  text-align: center; 
+  text-align: left; 
   grid-area: labelState;
 }
 
 .workplaceInput {
   grid-area: a;
   display: grid;
+  margin-bottom: 10px;
+  padding-right: 0px;
   grid-template-areas: "labelWorkplace" "workplace";
 }
 
 .workplace {
   grid-area: workplace;
+  padding: 10px;
+  width: 300px;
+  color: grey;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
 }
 
 .cityInput {
   grid-area: b;
   display: grid;
+  margin-bottom: 10px;
+  margin-left: -100px;
   grid-template-areas: "labelCity" "city";
 }
 
 .city {
   grid-area: city;
-  
+  padding: 10px;
+  width: 300px;
+  color: grey;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
 }
 
 .stateInput {
   grid-area: c;
   display: grid;
+  margin-bottom: 10px;
+  padding-right: 95px;
   grid-template-areas: "labelState" "state";
 }
 
 .state {
   grid-area: state;
+  padding: 10px;
+  width: 300px;
+  color: grey;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
 }
 
 .profile-contact-box {
