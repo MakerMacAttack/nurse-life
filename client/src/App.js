@@ -8,6 +8,7 @@ import PostEdit from "./components/PostEdit/PostEdit";
 import PostCreate from "./components/PostCreate/PostCreate";
 import SignIn from "./components/SignIn/SignIn";
 import Privacy from "./screens/Privacy/Privacy";
+import Register from "./screens/Register/Register";
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/profile" component={Profile} />
         <Route path="/sign-in" render={() => (<SignIn setUser={setUser} />)}/>
         <Route path="/privacy" component={Privacy} />
+        <Route path="/register" component={Register} />
       </Switch>
     </div>
   );

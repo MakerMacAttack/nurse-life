@@ -5,7 +5,6 @@ import { getPost, updatePost } from "../../services/Posts.js";
 
 const PostEdit = (props) => {
   const [post, setPost] = useState({
-    name: "",
     content: "",
     imgURL: "",
   });
@@ -38,16 +37,6 @@ const PostEdit = (props) => {
   return (
     <div className="post-edit">
       <form className="edit-form" onSubmit={handleSubmit}>
-        <span>Name</span>
-        <input
-          className="post-edit-input-name"
-          placeholder=""
-          value={post.name}
-          name="name"
-          required
-          autoFocus
-          onChange={handleChange}
-        />
         <span>Post Content</span>
         <textarea
           className="post-edit-input-content"

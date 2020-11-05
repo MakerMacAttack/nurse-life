@@ -67,7 +67,11 @@ export default function SignIn(props) {
             </button>
             <span className="forgotPassword">Forgot Password?</span>
             <hr></hr>
-            <button type="submit" className="createAccount">
+            <button
+              type="submit"
+              className="createAccount"
+              onClick={() => history.push("/register")}
+            >
               Create New Account
             </button>
           </form>

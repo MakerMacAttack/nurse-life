@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const PostCreate = (props) => {
   const [post, setPost] = useState({
-    name: "",
+    user: props.user,
     content: "",
     imgURL: "",
   });
@@ -24,10 +24,10 @@ const PostCreate = (props) => {
     e.preventDefault();
     await createPost(post);
     setPost({
-      name: "",
+      ...post,
       content: "",
       imgURL: "",
-    })
+    });
     history.push("/");
     props.set((prev) => !prev);
   };
@@ -41,17 +41,6 @@ const PostCreate = (props) => {
             placeholder="Start a post..."
             value={post.content}
             name="content"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="name-area">
-          <input
-            className="input-name"
-            placeholder="Name"
-            value={post.name}
-            name="name"
-            required
-            autoFocus
             onChange={handleChange}
           />
         </div>
