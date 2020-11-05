@@ -2,14 +2,13 @@ import React from "react";
 import "./Post.css";
 import { Link } from "react-router-dom";
 import { deletePost } from "../../services/Posts.js";
-import { getUser, getUsers } from "../../services/Users";
+import { getUser } from "../../services/Users";
 
 const Post = (props) => {
   const { content, imgURL } = props;
   let name = "";
 
   function populateName(user) {
-    console.log(user);
     name = `${user.name.first} ${user.name.last}`;
   }
 
