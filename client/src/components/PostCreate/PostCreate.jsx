@@ -24,6 +24,7 @@ const PostCreate = (props) => {
     e.preventDefault();
     await createPost(post);
     setPost({
+      ...post,
       content: "",
       imgURL: "",
     });
