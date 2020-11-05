@@ -55,34 +55,34 @@ export default function Profile(props) {
             </div>
 
             <div className="profile-bday-box">
-              <label className="labelBirthday" htmlFor="birthday">Date of Birth</label>
+              <label className="labelBirthday" htmlFor="birthday">Date of birth</label>
               <input className="birthday" type="date" id="birthday" name="birthday" />
             </div>
 
             <div className="profile-work-box">
-              <label htmlFor="workplace">Institution/Work Place</label>
-              <input
+              <label className="labelWorkplace" htmlFor="workplace">Institution/Work Place</label>
+              <input className="workplace"
                 id="workplace"
                 name="workplace"
                 placeholder="Where you work"
               />
-              <label htmlFor="city">City</label>
-              <input id="city" name="city" placeholder="City" />
-              <label htmlFor="state">State</label>
-              <input id="state" name="state" placeholder="State" />
+              <label className="labelCity" htmlFor="city">City</label>
+              <input className="city" id="city" name="city" placeholder="City" />
+              <label className="labelState" htmlFor="state">State</label>
+              <input className="state" id="state" name="state" placeholder="State" />
             </div>
 
             <div className="profile-contact-box">
-              <label htmlFor="phone">Phone Number</label>
-              <input
+              <label className="labelPhone" htmlFor="phone">Phone Number</label>
+              <input className="phone"
                 id="phone"
                 type="tel"
                 name="phone"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 placeholder="314-159-2653"
               />
-              <label htmlFor="email">E-mail Address</label>
-              <input
+              <label className="labelEmail" htmlFor="email">E-mail Address</label>
+              <input className="email"
                 type="email"
                 id="email"
                 name="email"

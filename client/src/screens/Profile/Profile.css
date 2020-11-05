@@ -9,7 +9,7 @@
 
 .profile-master2 {
   width: 80vw;
-  height: 90vh;
+  height: 95vh;
   border-radius: 2px;
   box-shadow: 1px 1px 10px 0;
   padding: 20px;
@@ -162,6 +162,7 @@ input {
 .birthday {
   padding: 10px;
   width: 300px;
+  color: grey;
   margin-top: 05px;
   border-radius: 05px;
   border-color: lightgrey;
@@ -169,11 +170,101 @@ input {
 }
 
 .profile-work-box {
-  display: flex;
+  display: grid;
   margin: 20px;
+  grid-template-areas: 
+  "inputWorkplace inputCity inputState" 
+  "labelWorkplace labelCity labelState" ;
 }
 
+.labelWorkplace {
+  font-family: Helvetica;
+  color:black;
+  text-align: center; 
+  margin: 0 585px 0 0;
+  grid-area: inputWorkplace;
+}
+
+/* .labelCity {
+  font-family: Helvetica;
+  color:black;
+  Margin: 0 700px 0 0;
+  grid-area: inputCity;
+}
+
+.labelState {
+  font-family: Helvetica;
+  color: black;
+  text-align: center; 
+  margin: 0 585px 0 0;
+  grid-area: inputState;
+} */
+
+.workplace {
+  padding: 10px;
+  width: 300px;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelWorkplace;
+}
+
+/* .city {
+  padding: 10px;
+  width: 300px;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelCity;
+}
+
+.state {
+  padding: 10px;
+  width: 300px;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelstate;
+} */
+
 .profile-contact-box {
-  display: flex;
+  display: grid;
   margin: 20px;
+  grid-template-areas: 
+  "inputPhone inputEmail" 
+  "labelPhone labelEmail" ;
+}
+
+.labelPhone {
+  font-family: Helvetica;
+  color:black;
+  text-align: center; 
+  margin: 0 470px 0 0;
+  grid-area: inputPhone;
+}
+
+.labelEmail {
+  /* font-family: Helvetica;
+  color:black;
+  text-align: center; 
+  margin: 0 470px 0 0;
+  grid-area: inputPhone; */
+}
+
+.phone {
+  padding: 10px;
+  width: 300px;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelPhone;
+}
+
+.email {
+  padding: 10px;
+  width: 300px;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelEmail;
 }
