@@ -41,7 +41,10 @@ export default function Profile(props) {
             </div>
 
             <div className="profile-gender-box">
-              <label className="labelGender" htmlFor="gender"> Gender </label>
+              <label className="labelGender" htmlFor="gender">
+                {" "}
+                Gender{" "}
+              </label>
 
               <select className="gender" name="gender">
                 <option value="male">Male</option>
@@ -52,9 +55,10 @@ export default function Profile(props) {
             </div>
 
             <div className="profile-bday-box">
-              <label htmlFor="birthday">Date of Birth</label>
-              <input type="date" id="birthday" name="birthday" />
+              <label className="labelBirthday" htmlFor="birthday">Date of Birth</label>
+              <input className="birthday" type="date" id="birthday" name="birthday" />
             </div>
+
             <div className="profile-work-box">
               <label htmlFor="workplace">Institution/Work Place</label>
               <input

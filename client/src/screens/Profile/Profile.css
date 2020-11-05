@@ -129,6 +129,7 @@ input {
 .labelGender {
   font-family: Helvetica;
   color: black;
+  text-align: center; 
   margin: 0 700px 0 0;
   grid-area: inputGender;
 }
@@ -137,16 +138,34 @@ input {
   padding: 10px;
   width: 300px;
   margin-top: 05px;
-  text-align: center; 
   border-radius: 05px;
   border-color: lightgrey;
   grid-area: labelGender;
 }
 
-
 .profile-bday-box {
-  display: flex;
+  display: grid;
   margin: 20px;
+  grid-template-areas: 
+  "inputBirthday" 
+  "labelBirthday" ;
+}
+
+.labelBirthday {
+  font-family: Helvetica;
+  color: black;
+  text-align: center; 
+  margin: 0 650px 0 0;
+  grid-area: inputBirthday;
+}
+
+.birthday {
+  padding: 10px;
+  width: 300px;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelBirthday;
 }
 
 .profile-work-box {
