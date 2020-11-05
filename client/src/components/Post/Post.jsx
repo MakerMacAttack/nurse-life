@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Post.css";
 import { Link } from "react-router-dom";
 import { deletePost } from "../../services/Posts.js";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 const Post = (props) => {
   const { name, content, imgURL } = props;
 
-  let history = useHistory();
+  // let history = useHistory();
 
   async function handleDelete() {
     await deletePost(props.id);
@@ -19,10 +19,10 @@ const Post = (props) => {
   function compilePost() {
     if (/.+\.(jpg|jpeg|png|apng|gif|bmp|svg)$/.test(imgURL)) {
       fullPost = (
-        <div className="post-container"> 
+        <div className="post-container">
           <h2 className="post-name">{name}</h2>
           <h3 className="post-content">{content}</h3>
-          <img className="post-image" src={imgURL} alt="Image with post" />
+          <img className="post-image" src={imgURL} alt="post" />
         </div>
       );
     } else {
