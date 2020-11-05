@@ -31,14 +31,14 @@ export default function SignIn(props) {
     <div className="signInMaster">
       <div className="logoBox">
         <div className="logoBio">
-          <div className="LogoDiv">
+          <div className="logoDiv">
             <img
               className="logo"
               src="./assets/images/Purple.png"
               alt="nurseLine"
             ></img>
           </div>
-          <h5>
+          <h5 className="bioNurses">
             A private website for nurses, by nurses. Share your story, post a
             resource & take a break.
           </h5>
