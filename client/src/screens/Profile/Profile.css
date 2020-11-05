@@ -62,10 +62,8 @@
 }
 
 .Name {
-  margin-bottom: -16px;
-  margin-left: 20px;
   text-align: left;
-
+  margin: 0 0 0 24px;
 }
 
 .profile-updater {
@@ -117,7 +115,6 @@ input {
   border-radius: 05px;
   border-color: lightgrey;
   grid-area: inputLast;
-  /* box-shadow: 2px 2px 6px grey; */
 }
 
 .profile-gender-box {
@@ -139,8 +136,8 @@ input {
 
 .gender {
   padding: 10px;
-  width: 325px;
-  margin-top: -12px;
+  width: 300px;
+  margin-top: 05px;
   border-radius: 05px;
   border-color: lightgrey;
   grid-area: labelGender;
@@ -172,84 +169,64 @@ input {
   grid-area: labelBirthday;
 }
 
-.workplaceInput {
-  border: solid blue 3px;
-  grid-area: workplaceInput;
-}
-
-.cityInput {
-  border: solid blue 3px;
-  grid-area: cityInput;
-}
-
-.stateInput {
-  border: solid blue 3px;
-  grid-area: stateInput;
-}
-
 .profile-work-box {
   display: grid;
   margin: 20px;
-  width: 100%;
-  height: 300px;
-  grid-template-areas: "workplaceInput cityInput" 
-                       "stateInput" ;
-  border: solid red;
-  grid-template-rows: 50% 50%;
-  grid-template-columns: 50% 50%;
+  grid-template-areas: 
+  " a b " 
+  " c .";
 }
 
-
-/* .labelWorkplace {
+.labelWorkplace {
   font-family: Helvetica;
   color:black;
   text-align: center; 
-  margin: 0 585px 0 0;
-  grid-area: inputWorkplace;
-  
+  grid-area: labelWorkplace;
 }
 
 .labelCity {
   font-family: Helvetica;
   color:black;
-  Margin: 0 700px 0 0;
-  grid-area: inputCity;
-} */
-
-/* .labelState {
-  font-family: Helvetica;
-  color: black;
-  text-align: center; 
-  margin: 0 585px 0 0;
-  grid-area: inputState;
-}
-
-.workplace {
-  padding: 10px;
-  width: 300px;
-  margin-top: 05px;
-  border-radius: 05px;
-  border-color: lightgrey;
-  grid-area: labelWorkplace;
-}
-
-.city {
-  padding: 10px;
-  width: 300px;
-  margin-top: 05px;
-  border-radius: 05px;
-  border-color: lightgrey;
   grid-area: labelCity;
 }
 
+.labelState {
+  font-family: Helvetica;
+  color: black;
+  text-align: center; 
+  grid-area: labelState;
+}
+
+.workplaceInput {
+  grid-area: a;
+  display: grid;
+  grid-template-areas: "labelWorkplace" "workplace";
+}
+
+.workplace {
+  grid-area: workplace;
+}
+
+.cityInput {
+  grid-area: b;
+  display: grid;
+  grid-template-areas: "labelCity" "city";
+}
+
+.city {
+  grid-area: city;
+  
+}
+
+.stateInput {
+  grid-area: c;
+  display: grid;
+  grid-template-areas: "labelState" "state";
+}
+
 .state {
-  padding: 10px;
-  width: 300px;
-  margin-top: 05px;
-  border-radius: 05px;
-  border-color: lightgrey;
-  grid-area: labelstate;
-} */
+  grid-area: state;
+}
 
 .profile-contact-box {
   display: grid;
@@ -263,18 +240,16 @@ input {
   font-family: Helvetica;
   color:black;
   text-align: center; 
-  margin: 0 470px 0 0;
+  /* margin: 0 470px 0 0; */
   grid-area: inputPhone;
-  /* border: solid blue 3px; */
 }
 
 .labelEmail {
   font-family: Helvetica;
   color:black;
   text-align: center; 
-  margin: 0 470px 0 0;
-  grid-area: inputEmail;
-  /* border: solid blue 3px; */
+  /* margin: 0 470px 0 0; */
+  grid-area: inputPhone;
 }
 
 .phone {
