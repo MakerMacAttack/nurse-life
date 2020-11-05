@@ -256,40 +256,56 @@ input {
   display: grid;
   margin: 20px;
   grid-template-areas: 
-  "inputPhone inputEmail" 
-  "labelPhone labelEmail" ;
+  " x y " 
+  " . . " ;
 }
 
 .labelPhone {
   font-family: Helvetica;
   color:black;
-  text-align: center; 
-  /* margin: 0 470px 0 0; */
-  grid-area: inputPhone;
+  text-align: left; 
+  grid-area: labelPhone;
 }
 
 .labelEmail {
   font-family: Helvetica;
   color:black;
-  text-align: center; 
-  /* margin: 0 470px 0 0; */
-  grid-area: inputPhone;
+  text-align: left; 
+  grid-area: labelEmail;
+}
+
+.inputPhone {
+  grid-area: x;
+  display: grid;
+  margin-bottom: 10px;
+  padding-right: 0px;
+  grid-template-areas: "labelPhone" "phone";
 }
 
 .phone {
+  grid-area: phone;
   padding: 10px;
   width: 300px;
+  color: grey;
   margin-top: 05px;
   border-radius: 05px;
   border-color: lightgrey;
-  grid-area: labelPhone;
+}
+
+.inputEmail {
+  grid-area: y;
+  display: grid;
+  margin-bottom: 10px;
+  padding-right: 0px;
+  grid-template-areas: "labelEmail" "email";
 }
 
 .email {
+  grid-area: email;
   padding: 10px;
   width: 300px;
+  color: grey;
   margin-top: 05px;
   border-radius: 05px;
   border-color: lightgrey;
-  grid-area: labelEmail;
 }
