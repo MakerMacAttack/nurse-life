@@ -1,11 +1,26 @@
 .post-edit {
-  height: 80vh;
+  height: 82vh;
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  background-color: #f3f3f5;
 }
 
 .edit-form {
-  border: solid 3px black;
+  box-shadow: 4px 4px 6px 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  padding: 3%;
+  background-color: #ffffff;
+}
+
+.post-edit-input-name,
+.post-edit-input-content,
+.post-edit-edit-img,
+.post-edit-save-button {
+  margin: 1%;
+  height: 40px;
 }
