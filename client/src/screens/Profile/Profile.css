@@ -1,50 +1,271 @@
-#pic-box {
+.profile-master {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 55px;
+}
+
+.profile-master2 {
+  width: 80vw;
+  height: 95vh;
+  border-radius: 2px;
+  box-shadow: 1px 1px 10px 0;
+  padding: 20px;
+}
+
+.pic-box {
   display: flex;
   flex-direction: column;
   max-width: 100px;
 }
 
-#edit-pic {
+.edit-pic {
   font-size: 8px;
+  font-family: Helvetica;
 }
 
-#profile-pic {
+.profile-pic {
   max-width: 100px;
   max-height: 100px;
 }
 
-#profile-header {
+.profile-header {
   display: flex;
 }
 
-#profile-updater {
+.profile-header-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.save-profile-button {
+  justify-self: end;
+  font-family: Helvetica;
+  position: relative;
+}
+
+.save-profile-button2 {
+  font-size: 15px;
+  position: absolute;
+  bottom: 10px;
+  color: grey;
+  right: 20px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
+
+.save-profile-button2:hover {
+  color: #199ff3;
+}
+
+.Name {
+  text-align: left;
+  margin: 0 0 0 24px;
+}
+
+.profile-updater {
   display: flex;
   flex-direction: column;
   width: 80vw;
   margin: 0 auto;
+  justify-content: space-evenly;
 }
 
-#profile-name-box {
-  display: flex;
+.profile-name-box {
   margin: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-areas: 
+  "inputFirst inputLast" 
+  "labelFirst labelLast" ;
 }
 
-#profile-gender-box {
-  display: flex;
-  margin: 20px;
+.labelFirst {
+  font-family: Helvetica;
+  color: grey;
+  margin: 0 260px 0 0;
+  grid-area: labelFirst;
 }
 
-#profile-bday-box {
-  display: flex;
-  margin: 20px;
+.labelSecond {
+  font-family: Helvetica;
+  color: grey;
+  Margin: 0 290px 0 0;
+  grid-area: labelLast;
 }
 
-#profile-work-box {
-  display: flex;
-  margin: 20px;
+.first {
+  padding: 10px;
+  width: 300px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: inputFirst;
 }
 
-#profile-contact-box {
-  display: flex;
+input { 
+  text-align: center; 
+}
+
+.last {
+  padding: 10px;
+  width: 300px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: inputLast;
+}
+
+.profile-gender-box {
+  display: grid;
   margin: 20px;
+  gap: 20px;
+  grid-template-areas: 
+  "inputGender" 
+  "labelGender" ;
+}
+
+.labelGender {
+  font-family: Helvetica;
+  color: black;
+  text-align: center; 
+  margin: 0 700px 0 0;
+  grid-area: inputGender;
+}
+
+.gender {
+  padding: 10px;
+  width: 300px;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelGender;
+}
+
+.profile-bday-box {
+  display: grid;
+  margin: 20px;
+  grid-template-areas: 
+  "inputBirthday" 
+  "labelBirthday" ;
+}
+
+.labelBirthday {
+  font-family: Helvetica;
+  color: black;
+  text-align: center; 
+  margin: 0 650px 0 0;
+  grid-area: inputBirthday;
+}
+
+.birthday {
+  padding: 10px;
+  width: 300px;
+  color: grey;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelBirthday;
+}
+
+.profile-work-box {
+  display: grid;
+  margin: 20px;
+  grid-template-areas: 
+  " a b " 
+  " c .";
+}
+
+.labelWorkplace {
+  font-family: Helvetica;
+  color:black;
+  text-align: center; 
+  grid-area: labelWorkplace;
+}
+
+.labelCity {
+  font-family: Helvetica;
+  color:black;
+  grid-area: labelCity;
+}
+
+.labelState {
+  font-family: Helvetica;
+  color: black;
+  text-align: center; 
+  grid-area: labelState;
+}
+
+.workplaceInput {
+  grid-area: a;
+  display: grid;
+  grid-template-areas: "labelWorkplace" "workplace";
+}
+
+.workplace {
+  grid-area: workplace;
+}
+
+.cityInput {
+  grid-area: b;
+  display: grid;
+  grid-template-areas: "labelCity" "city";
+}
+
+.city {
+  grid-area: city;
+  
+}
+
+.stateInput {
+  grid-area: c;
+  display: grid;
+  grid-template-areas: "labelState" "state";
+}
+
+.state {
+  grid-area: state;
+}
+
+.profile-contact-box {
+  display: grid;
+  margin: 20px;
+  grid-template-areas: 
+  "inputPhone inputEmail" 
+  "labelPhone labelEmail" ;
+}
+
+.labelPhone {
+  font-family: Helvetica;
+  color:black;
+  text-align: center; 
+  /* margin: 0 470px 0 0; */
+  grid-area: inputPhone;
+}
+
+.labelEmail {
+  font-family: Helvetica;
+  color:black;
+  text-align: center; 
+  /* margin: 0 470px 0 0; */
+  grid-area: inputPhone;
+}
+
+.phone {
+  padding: 10px;
+  width: 300px;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelPhone;
+}
+
+.email {
+  padding: 10px;
+  width: 300px;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelEmail;
 }
