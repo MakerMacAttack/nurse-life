@@ -103,6 +103,7 @@ export default function Profile(props) {
             </div>
 
             <div className="profile-contact-box">
+              <div className="inputPhone">
               <label className="labelPhone" htmlFor="phone">
                 Phone Number
               </label>
@@ -113,7 +114,9 @@ export default function Profile(props) {
                 name="phone"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 placeholder="314-159-2653"
-              />
+                />
+              </div>
+              <div className="inputEmail">
               <label className="labelEmail" htmlFor="email">
                 E-mail Address
               </label>
@@ -123,7 +126,8 @@ export default function Profile(props) {
                 id="email"
                 name="email"
                 placeholder="you@domain.com"
-              />
+                />
+                </div>
             </div>
           </div>
         </form>
