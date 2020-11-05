@@ -25,7 +25,7 @@ export default function Feed(props) {
   return (
     <div>
       <PostCreate set={setTrigger} user={props.user} />
-      <PostList posts={posts} set={setTrigger} user={props.user} />
+      <PostList posts={posts} set={setTrigger} />
     </div>
   );
 }

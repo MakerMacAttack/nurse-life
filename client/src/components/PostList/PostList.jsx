@@ -12,6 +12,7 @@ export default function PostList(props) {
           imgURL={post.imgURL}
           id={post._id}
           set={props.set}
+          user={post.user}
         />
       ))}
     </div>

@@ -2,9 +2,23 @@ import React from "react";
 import "./Post.css";
 import { Link } from "react-router-dom";
 import { deletePost } from "../../services/Posts.js";
+import { getUser, getUsers } from "../../services/Users";
 
 const Post = (props) => {
-  const { user, content, imgURL } = props;
+  const { content, imgURL } = props;
+  let name = "";
+
+  function populateName(user) {
+    console.log(user);
+    name = `${user.name.first} ${user.name.last}`;
+  }
+
+  async function fetchName() {
+    const user = await getUser(props.user);
+    populateName(user);
+  }
+
+  fetchName();
 
   async function handleDelete() {
     await deletePost(props.id);
@@ -17,7 +31,7 @@ const Post = (props) => {
     if (/.+\.(jpg|jpeg|png|apng|gif|bmp|svg)$/.test(imgURL)) {
       fullPost = (
         <div className="post-container">
-          <h2 className="post-name">{user.name.first}</h2>
+          <h2 className="post-name">{name}</h2>
           <h3 className="post-content">{content}</h3>
           <img className="post-image" src={imgURL} alt="post" />
         </div>
@@ -25,7 +39,7 @@ const Post = (props) => {
     } else {
       fullPost = (
         <div>
-          <h2 className="post-name">{user.name.first}</h2>
+          <h2 className="post-name">{name}</h2>
           <h3 className="post-content">{content}</h3>
         </div>
       );
