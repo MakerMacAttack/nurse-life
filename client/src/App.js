@@ -7,7 +7,7 @@ import { Route, Switch } from "react-router-dom";
 import PostEdit from "./components/PostEdit/PostEdit";
 import PostCreate from "./components/PostCreate/PostCreate";
 import SignIn from "./components/SignIn/SignIn";
-import Privacy from "./components/Privacy/Privacy";
+import Privacy from "./screens/Privacy/Privacy";
 
 const App = () => {
   return (

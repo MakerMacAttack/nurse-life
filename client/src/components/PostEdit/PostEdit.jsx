@@ -59,10 +59,11 @@ const PostEdit = (props) => {
           className="edit-img"
           placeholder=""
           value={post.imgURL}
-          name="image"
+          name="imgURL"
+          onChange={handleChange}
         />
         <button type="submit" className="save-button">
-          Save
+          Save!
         </button>
       </form>
     </div>
