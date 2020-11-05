@@ -38,6 +38,7 @@ const PostEdit = (props) => {
   return (
     <div className="post-edit">
       <form className="edit-form" onSubmit={handleSubmit}>
+        <span>Name</span>
         <input
           className="post-edit-input-name"
           placeholder=""
@@ -47,14 +48,17 @@ const PostEdit = (props) => {
           autoFocus
           onChange={handleChange}
         />
-        <input
+        <span>Post Content</span>
+        <textarea
           className="post-edit-input-content"
           placeholder=""
+          maxLength="200"
           value={post.content}
           name="content"
           required
           onChange={handleChange}
         />
+        <span>Image URL</span>
         <input
           className="post-edit-edit-img"
           placeholder=""
