@@ -50,15 +50,15 @@
   font-size: 15px;
   position: absolute;
   bottom: 10px;
-  color: grey;
   right: 20px;
-  text-decoration: none;
-  background-color: transparent;
-  border: none;
+  background-color: #199ff3;
+  color: #ffffff;
+  border-radius: 8px;
+  margin: 15px;
 }
 
 .save-profile-button2:hover {
-  color: #199ff3;
+  color: black;
 }
 
 .Name {

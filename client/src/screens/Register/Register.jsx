@@ -59,7 +59,7 @@ export default function Register(props) {
           </div>
           <div className="save-profile-button">
             <button type="submit" className="save-profile-button2">
-              Save
+              Create Account
             </button>
           </div>
         </div>
