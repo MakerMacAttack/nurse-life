@@ -51,14 +51,13 @@
   position: absolute;
   bottom: 10px;
   right: 20px;
-  background-color: #199ff3;
-  color: #ffffff;
-  border-radius: 8px;
-  margin: 15px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
 }
 
 .save-profile-button2:hover {
-  color: black;
+  color: #199ff3;
 }
 
 .Name {
