@@ -1,7 +1,16 @@
 import React from "react";
 import "./Profile.css";
+import { deleteUser } from "../../services/Users.js";
+import { Link } from "react-router-dom";
 
-export default function Profile(props) {
+function Profile(props) {
+
+
+  async function handleDelete() {
+    await deleteUser(props.user._id);
+    props.set((prev) => !prev);
+  }
+
   return (
     <div className="profile-master">
       <div className="profile-master2">
@@ -33,11 +42,11 @@ export default function Profile(props) {
               <label className="labelFirst" htmlFor="first">
                 First Name
               </label>
-              <input className="first" name="first" />
+              <input value={props.user.name.first} className="first" name="first" />
               <label className="labelSecond" htmlFor="last">
                 Last Name
               </label>
-              <input className="last" name="last" />
+              <input value={props.user.name.last} className="last" name="last" />
             </div>
 
             <div className="profile-gender-box">
@@ -46,7 +55,7 @@ export default function Profile(props) {
                 Gender{" "}
               </label>
 
-              <select className="gender" name="gender">
+              <select value={props.user.gender} className="gender" name="gender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
@@ -59,6 +68,7 @@ export default function Profile(props) {
                 Date of birth
               </label>
               <input
+                value={props.user.birthday}
                 className="birthday"
                 type="date"
                 id="birthday"
@@ -72,6 +82,7 @@ export default function Profile(props) {
                   Institution/Work Place
                 </label>
                 <input
+                  value={props.user.work.institution}
                   className="workplace"
                   id="workplace"
                   name="workplace"
@@ -83,6 +94,7 @@ export default function Profile(props) {
                   City
                 </label>
                 <input
+                  value={props.user.work.city}
                   className="city"
                   id="city"
                   name="city"
@@ -94,6 +106,7 @@ export default function Profile(props) {
                   State
                 </label>
                 <input
+                  value={props.user.work.state}
                   className="state"
                   id="state"
                   name="state"
@@ -104,30 +117,42 @@ export default function Profile(props) {
 
             <div className="profile-contact-box">
               <div className="inputPhone">
-              <label className="labelPhone" htmlFor="phone">
-                Phone Number
-              </label>
-              <input
-                className="phone"
-                id="phone"
-                type="tel"
-                name="phone"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                placeholder="314-159-2653"
+                <label className="labelPhone" htmlFor="phone">
+                  Phone Number
+                </label>
+                <input
+                  className="phone"
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  placeholder="314-159-2653"
                 />
               </div>
               <div className="inputEmail">
-              <label className="labelEmail" htmlFor="email">
-                E-mail Address
-              </label>
-              <input
-                className="email"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="you@domain.com"
+                <label className="labelEmail" htmlFor="email">
+                  E-mail Address
+                </label>
+                <input
+                  className="email"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@domain.com"
                 />
+                <div>
+                  <button className="edit-button">
+                    <Link className="edit-link" to={`/posts/${props.id}/edit`}>
+                      Edit
+                    </Link>
+                  </button>
                 </div>
+                <div className="delete-button">
+                  <button className="delete-button" onClick={handleDelete}>
+                    Delete
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </form>
@@ -135,3 +160,5 @@ export default function Profile(props) {
     </div>
   );
 }
+
+export default Profile;
