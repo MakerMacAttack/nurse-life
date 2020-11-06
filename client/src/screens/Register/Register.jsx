@@ -55,7 +55,7 @@ export default function Register(props) {
               />
               <p className="edit-pic">Edit Profile Picture</p>
             </div>
-            <h1>My Account</h1>
+            <h1>Create Account</h1>
           </div>
           <div className="save-profile-button">
             <button type="submit" className="save-profile-button2">
