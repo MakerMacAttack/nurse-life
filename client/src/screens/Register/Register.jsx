@@ -35,10 +35,13 @@ export default function Register(props) {
   );
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { group, name, value } = event.target;
     setProfile({
       ...profile,
-      [name]: value, // Nest
+      [group]: {
+        ...[group],
+        [name]: value,
+      }, // Nest
     });
   };
 
@@ -73,7 +76,12 @@ export default function Register(props) {
               <label className="labelFirst" htmlFor="first">
                 First Name
               </label>
-              <input className="first" name="first" />
+              <input
+                className="first"
+                group="name"
+                name="first"
+                onChange={handleChange}
+              />
               <label className="labelSecond" htmlFor="last">
                 Last Name
               </label>

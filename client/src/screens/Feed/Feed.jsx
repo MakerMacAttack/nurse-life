@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import PostCreate from "../../components/PostCreate/PostCreate";
 import PostList from "../../components/PostList/PostList";
 import { getPosts } from "../../services/Posts";
+import { getUser } from "../../services/Users";
 
 export default function Feed(props) {
   const [posts, setPosts] = useState([]);
@@ -10,8 +11,15 @@ export default function Feed(props) {
 
   const history = useHistory();
 
+  const register = localStorage.getItem("loggedin");
+
   if (props.user === null) {
-    history.push("/sign-in");
+    if (!!register) {
+      const currentUser = getUser(register);
+      props.setUser(currentUser);
+    } else {
+      history.push("/sign-in");
+    }
   }
 
   useEffect(() => {

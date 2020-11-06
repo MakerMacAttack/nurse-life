@@ -17,7 +17,7 @@ const App = () => {
     <div className="App">
       <Header />
       <Switch>
-        <Route exact path="/" render={() => (<Feed user={user} />)} />
+        <Route exact path="/" render={() => (<Feed user={user} setUser={setUser} />)} />
         <Route path="/add-post" component={PostCreate} />
         <Route exact path="/posts/:id/edit" component={PostEdit} />
         <Route path="/profile" component={Profile} />

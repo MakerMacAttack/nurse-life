@@ -10,6 +10,7 @@ export default function SignIn(props) {
   const history = useHistory();
 
   function handleMatch(user) {
+    localStorage.setItem("loggedin", user._id);
     props.setUser(user);
     history.push("/");
   }
