@@ -134,14 +134,16 @@ input {
   font-family: Helvetica;
   color: black;
   text-align: center;
-  margin: 0 700px 0 0;
+  margin: 0 920px 0 0;
   grid-area: inputGender;
 }
 
 .gender {
   padding: 10px;
-  width: 300px;
+  width: 325px;
   margin-top: 05px;
+  margin: auto;
+  margin-left: 68px;
   border-radius: 05px;
   border-color: lightgrey;
   grid-area: labelGender;
@@ -159,7 +161,7 @@ input {
   font-family: Helvetica;
   color: black;
   text-align: center;
-  margin: 0 650px 0 0;
+  margin: 0 880px 0 0;
   grid-area: inputBirthday;
 }
 
@@ -168,6 +170,8 @@ input {
   width: 300px;
   color: grey;
   margin-top: 05px;
+  margin: auto;
+  margin-left: 68px;
   border-radius: 05px;
   border-color: lightgrey;
   grid-area: labelBirthday;
@@ -206,6 +210,8 @@ input {
   grid-area: a;
   display: grid;
   margin-bottom: 10px;
+  margin: auto;
+  margin-left: 68px;
   padding-right: 0px;
   grid-template-areas: "labelWorkplace" "workplace";
 }
@@ -224,7 +230,8 @@ input {
   grid-area: b;
   display: grid;
   margin-bottom: 10px;
-  margin-left: -100px;
+  margin: auto;
+  margin-right: 59.5%;
   grid-template-areas: "labelCity" "city";
 }
 
@@ -242,6 +249,8 @@ input {
   grid-area: c;
   display: grid;
   margin-bottom: 10px;
+  margin: auto;
+  margin-left: 68px;
   padding-right: 95px;
   grid-template-areas: "labelState" "state";
 }
@@ -282,6 +291,8 @@ input {
   grid-area: x;
   display: grid;
   margin-bottom: 10px;
+  margin: auto;
+  margin-left: 68px;
   padding-right: 0px;
   grid-template-areas: "labelPhone" "phone";
 }
@@ -300,6 +311,8 @@ input {
   grid-area: y;
   display: grid;
   margin-bottom: 10px;
+  margin: auto;
+  margin-right: 55%;
   padding-right: 0px;
   grid-template-areas: "labelEmail" "email";
 }
