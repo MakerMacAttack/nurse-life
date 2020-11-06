@@ -37,7 +37,7 @@ const App = () => {
         <Route exact path="/posts/:id/edit" component={PostEdit} />
         <Route
           path="/profile"
-          render={() => <Profile user={user} />} />
+          render={() => user && <Profile user={user} />} />
         <Route path="/sign-in" render={() => <SignIn setUser={setUser} />} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/register" component={Register} />

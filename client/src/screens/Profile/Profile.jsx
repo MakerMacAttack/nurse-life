@@ -13,6 +13,13 @@ function Profile(props) {
     return <h1>Loading...</h1>;
   }
 
+  const date = (`${(props.user.birthday.year).toString()}-${props.user.birthday.month < 10
+      ? `0${(props.user.birthday.month).toString()}`
+      : `${(props.user.birthday.month).toString()}`
+    }-${(props.user.birthday.day).toString()}`);
+
+  
+
   return (
     <div className="profile-master">
       <div className="profile-master2">
@@ -82,7 +89,8 @@ function Profile(props) {
                 Date of birth
               </label>
               <input
-                value={props.user.birthday}
+                // value={`${props.user.birthday.year}-${props.user.birthday.month}-${props.user.birthday.day}`}
+                value={date}
                 className="birthday"
                 type="date"
                 id="birthday"
@@ -154,13 +162,6 @@ function Profile(props) {
                   name="email"
                   placeholder="you@domain.com"
                 />
-                <div>
-                  <button className="edit-button">
-                    <Link className="edit-link" to={`/posts/${props.id}/edit`}>
-                      Edit
-                    </Link>
-                  </button>
-                </div>
                 <div className="delete-button">
                   <button className="delete-button" onClick={handleDelete}>
                     Delete
