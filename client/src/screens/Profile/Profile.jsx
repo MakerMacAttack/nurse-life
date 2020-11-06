@@ -4,11 +4,13 @@ import { deleteUser } from "../../services/Users.js";
 import { Link } from "react-router-dom";
 
 function Profile(props) {
-
-
   async function handleDelete() {
     await deleteUser(props.user._id);
     props.set((prev) => !prev);
+  }
+
+  if (!props.user) {
+    return <h1>Loading...</h1>;
   }
 
   return (
@@ -42,11 +44,19 @@ function Profile(props) {
               <label className="labelFirst" htmlFor="first">
                 First Name
               </label>
-              <input value={props.user.name.first} className="first" name="first" />
+              <input
+                value={props.user.name.first}
+                className="first"
+                name="first"
+              />
               <label className="labelSecond" htmlFor="last">
                 Last Name
               </label>
-              <input value={props.user.name.last} className="last" name="last" />
+              <input
+                value={props.user.name.last}
+                className="last"
+                name="last"
+              />
             </div>
 
             <div className="profile-gender-box">
@@ -55,7 +65,11 @@ function Profile(props) {
                 Gender{" "}
               </label>
 
-              <select value={props.user.gender} className="gender" name="gender">
+              <select
+                value={props.user.gender}
+                className="gender"
+                name="gender"
+              >
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>

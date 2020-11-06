@@ -13,10 +13,14 @@ export default function Feed(props) {
 
   const register = localStorage.getItem("loggedin");
 
+  async function restoreUser(id) {
+    const currentUser = await getUser(id);
+    props.setUser(currentUser);
+  }
+
   if (props.user === null) {
     if (!!register) {
-      const currentUser = getUser(register);
-      props.setUser(currentUser);
+      restoreUser(register);
     } else {
       history.push("/sign-in");
     }
