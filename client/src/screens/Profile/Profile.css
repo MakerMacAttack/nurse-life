@@ -1,6 +1,6 @@
-.profile-master {
-  width: 90vw;
-  height: 900vh;
+ .profile-master {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -8,7 +8,7 @@
 }
 
 .profile-master2 {
-  width: 80vw;
+  width: 90vw;
   height: 93vh;
   border-radius: 2px;
   box-shadow: 1px 1px 10px 0;
