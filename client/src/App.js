@@ -12,17 +12,19 @@ import Privacy from "./screens/Privacy/Privacy";
 import Register from "./screens/Register/Register";
 
 const App = () => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   return (
     <div className="App">
       <Header />
       <Switch>
-        <Route exact path="/" render={() => (<Feed user={user} />)} />
+        <Route exact path="/" render={() => <Feed user={user} />} />
         <Route path="/add-post" component={PostCreate} />
         <Route exact path="/posts/:id/edit" component={PostEdit} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/sign-in" render={() => (<SignIn setUser={setUser} />)}/>
+        <Route
+          path="/profile"
+          render={() => <Profile user={user} />} />
+        <Route path="/sign-in" render={() => <SignIn setUser={setUser} />} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/register" component={Register} />
       </Switch>
