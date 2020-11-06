@@ -22,6 +22,14 @@ const Header = () => {
               </div>
             </Link>
             <div className="favorites-div">
+              <img className="favorites" src="./assets/images/nav_bar_meditate.png" alt="favorites"></img>
+              <span className="favoritesLink">Meditation</span>
+            </div>
+            <div className="favorites-div">
+              <img className="favorites" src="./assets/images/nav_bar_messages.png" alt="favorites"></img>
+              <span className="favoritesLink">Messages</span>
+            </div>
+            <div className="favorites-div">
               <img className="favorites" src="./assets/images/nav_bar_favorites.png" alt="favorites"></img>
               <span className="favoritesLink">Favorites</span>
             </div>
