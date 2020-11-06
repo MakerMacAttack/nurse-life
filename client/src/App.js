@@ -10,9 +10,23 @@ import PostCreate from "./components/PostCreate/PostCreate";
 import SignIn from "./components/SignIn/SignIn";
 import Privacy from "./screens/Privacy/Privacy";
 import Register from "./screens/Register/Register";
+import { getUser } from "./services/Users";
 
 const App = () => {
   const [user, setUser] = useState(null);
+
+  const register = localStorage.getItem("loggedin");
+
+  async function restoreUser(id) {
+    const currentUser = await getUser(id);
+    setUser(currentUser);
+  }
+
+  if (user === null) {
+    if (register) {
+      restoreUser(register);
+    }
+  }
 
   return (
     <div className="App">
