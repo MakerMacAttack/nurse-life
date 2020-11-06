@@ -3,6 +3,7 @@ import "./App.css";
 import Feed from "./screens/Feed/Feed";
 import Profile from "./screens/Profile/Profile";
 import Header from "./components/shared/Header/Header";
+import Footer from "./components/shared/Footer/Footer";
 import { Route, Switch } from "react-router-dom";
 import PostEdit from "./components/PostEdit/PostEdit";
 import PostCreate from "./components/PostCreate/PostCreate";
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/privacy" component={Privacy} />
         <Route path="/register" component={Register} />
       </Switch>
+      <Footer />
     </div>
   );
 };
