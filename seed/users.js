@@ -18,7 +18,7 @@ const main = async () => {
         {
           year: 1991,
           month: 02,
-          day: 29,
+          day: 17,
         },
         work:
         {
