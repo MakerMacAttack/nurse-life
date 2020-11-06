@@ -1,5 +1,5 @@
 .header {
-  background-color: #140832;
+  background-color: #14072c;
   display: flex;
   flex-direction: column;
   height: 18vh;
@@ -17,6 +17,7 @@
   height: 25%;
   display: flex;
   justify-content: flex-end;
+  margin-left: 405px;
 }
 .nav-bottom {
   display: flex;
@@ -53,17 +54,32 @@
 
 .accounts-div,
 .favorites-div {
-  display: grid;
+  display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 
 .favoritesLink,
 .accountLink {
   color: white;
   padding: 5px;
+  text-decoration: none;
 }
 
 .account,
 .favorites {
   width: 50px;
+}
+
+.favorites-div {
+  justify-content: flex-end;
+}
+
+.favorites {
+  margin-right: -136px;
+  margin-bottom: 20px;
+}
+
+.favoritesLink {
+  margin-top: 45px;
 }
