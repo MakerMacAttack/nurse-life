@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Profile.css";
-import { deleteUser, updateUser } from "../../services/Users.js";
+import { deleteUser, getUser, updateUser } from "../../services/Users.js";
 
 function Profile(props) {
   const [profile, setProfile] = useState({
@@ -15,9 +16,13 @@ function Profile(props) {
   const [work, setWork] = useState(profile.work);
   const [contact, setContact] = useState(profile.contact);
 
+  const history = useHistory();
+
   async function handleDelete() {
+    localStorage.removeItem("loggedin");
     await deleteUser(props.user._id);
-    props.set((prev) => !prev);
+    await props.set((prev) => !prev);
+    history.push("/sign-in");
   }
 
   function handleContact(e) {
@@ -74,9 +79,16 @@ function Profile(props) {
     makeProfile(profile);
   }
 
+  function handleUpdate(updatedUser) {
+    props.set(updatedUser);
+    localStorage.setItem("loggedin", props.user._id);
+  }
+
   async function makeProfile(profile) {
     await updateUser(props.user._id, profile);
     alert("Your profile information has been updated.");
+    const updatedUser = await getUser(props.user.id);
+    handleUpdate(updatedUser);
   }
 
   if (!props.user) {
