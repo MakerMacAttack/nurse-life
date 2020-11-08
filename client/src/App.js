@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Header set={setUser}/>
       <Switch>
         <Route exact path="/" render={() => (<Feed user={user} setUser={setUser} />)} />
         <Route path="/add-post" component={PostCreate} />
