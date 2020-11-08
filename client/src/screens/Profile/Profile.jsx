@@ -10,24 +10,10 @@ function Profile(props) {
     work: props.user.work,
     contact: props.user.contact,
   });
-  const [name, setName] = useState({
-    first: "",
-    last: "",
-  });
-  const [birthday, setBirthday] = useState({
-    year: 0,
-    month: 0,
-    day: 0,
-  });
-  const [work, setWork] = useState({
-    institution: "",
-    state: "",
-    city: "",
-  });
-  const [contact, setContact] = useState({
-    phone: "",
-    email: "",
-  });
+  const [name, setName] = useState(profile.name);
+  const [birthday, setBirthday] = useState(profile.birthday);
+  const [work, setWork] = useState(profile.work);
+  const [contact, setContact] = useState(profile.contact);
 
   async function handleDelete() {
     await deleteUser(props.user._id);
