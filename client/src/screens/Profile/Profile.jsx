@@ -1,24 +1,107 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Profile.css";
-import { deleteUser } from "../../services/Users.js";
-import { Link } from "react-router-dom";
+import { deleteUser, updateUser } from "../../services/Users.js";
 
 function Profile(props) {
+  const [profile, setProfile] = useState({
+    name: props.user.name,
+    gender: props.user.gender,
+    birthday: props.user.birthday,
+    work: props.user.work,
+    contact: props.user.contact,
+  });
+  const [name, setName] = useState({
+    first: "",
+    last: "",
+  });
+  const [birthday, setBirthday] = useState({
+    year: 0,
+    month: 0,
+    day: 0,
+  });
+  const [work, setWork] = useState({
+    institution: "",
+    state: "",
+    city: "",
+  });
+  const [contact, setContact] = useState({
+    phone: "",
+    email: "",
+  });
+
   async function handleDelete() {
     await deleteUser(props.user._id);
     props.set((prev) => !prev);
+  }
+
+  function handleContact(e) {
+    const { name, value } = e.target;
+    setContact({
+      ...contact,
+      [name]: value,
+    });
+  }
+
+  function handleWork(e) {
+    const { name, value } = e.target;
+    setWork({
+      ...work,
+      [name]: value,
+    });
+  }
+
+  function handleBirthday(e) {
+    const [year, month, day] = e.target.value.split("-");
+    setBirthday({
+      year,
+      month,
+      day,
+    });
+  }
+
+  function handleName(e) {
+    const { value } = e.target;
+    const part = e.target.name;
+    setName({
+      ...name,
+      [part]: value,
+    });
+  }
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setProfile({
+      ...profile,
+      [name]: value,
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setProfile({
+      ...profile,
+      name,
+      birthday,
+      work,
+      contact,
+    });
+    makeProfile(profile);
+  }
+
+  async function makeProfile(profile) {
+    await updateUser(props.user._id, profile);
+    alert("Your profile information has been updated.");
   }
 
   if (!props.user) {
     return <h1>Loading...</h1>;
   }
 
-  const date = (`${(props.user.birthday.year).toString()}-${props.user.birthday.month < 10
-      ? `0${(props.user.birthday.month).toString()}`
-      : `${(props.user.birthday.month).toString()}`
-    }-${(props.user.birthday.day).toString()}`);
-
-  
+  const date = `${props.user.birthday.year.toString()}-${
+    props.user.birthday.month < 10
+      ? `0${props.user.birthday.month.toString()}`
+      : `${props.user.birthday.month.toString()}`
+  }-${props.user.birthday.day.toString()}`;
 
   return (
     <div className="profile-master">
@@ -36,9 +119,11 @@ function Profile(props) {
             <h1>My Account</h1>
           </div>
           <div className="save-profile-button">
-            <button type="submit" className="save-profile-button2">
-              Save
-            </button>
+            <form onSubmit={handleSubmit}>
+              <button type="submit" className="save-profile-button2">
+                Save
+              </button>
+            </form>
           </div>
         </div>
         <hr />
@@ -52,17 +137,19 @@ function Profile(props) {
                 First Name
               </label>
               <input
-                value={props.user.name.first}
+                value={name.first}
                 className="first"
                 name="first"
+                onChange={handleName}
               />
               <label className="labelSecond" htmlFor="last">
                 Last Name
               </label>
               <input
-                value={props.user.name.last}
+                value={name.last}
                 className="last"
                 name="last"
+                onChange={handleName}
               />
             </div>
 
@@ -72,11 +159,7 @@ function Profile(props) {
                 Gender{" "}
               </label>
 
-              <select
-                value={props.user.gender}
-                className="gender"
-                name="gender"
-              >
+              <select className="gender" name="gender" onChange={handleChange}>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
@@ -89,12 +172,13 @@ function Profile(props) {
                 Date of birth
               </label>
               <input
-                // value={`${props.user.birthday.year}-${props.user.birthday.month}-${props.user.birthday.day}`}
+                // value={`${profile.birthday.year}-${profile.birthday.month}-${profile.birthday.day}`}
                 value={date}
                 className="birthday"
                 type="date"
                 id="birthday"
                 name="birthday"
+                onChange={handleBirthday}
               />
             </div>
 
@@ -104,11 +188,12 @@ function Profile(props) {
                   Institution/Work Place
                 </label>
                 <input
-                  value={props.user.work.institution}
+                  value={work.institution}
                   className="workplace"
                   id="workplace"
-                  name="workplace"
+                  name="institution"
                   placeholder="Where you work"
+                  onChange={handleWork}
                 />
               </div>
               <div className="cityInput">
@@ -116,11 +201,12 @@ function Profile(props) {
                   City
                 </label>
                 <input
-                  value={props.user.work.city}
+                  value={work.city}
                   className="city"
                   id="city"
                   name="city"
                   placeholder="City"
+                  onChange={handleWork}
                 />
               </div>
               <div className="stateInput">
@@ -128,11 +214,12 @@ function Profile(props) {
                   State
                 </label>
                 <input
-                  value={props.user.work.state}
+                  value={work.state}
                   className="state"
                   id="state"
                   name="state"
                   placeholder="State"
+                  onChange={handleWork}
                 />
               </div>
             </div>
@@ -149,6 +236,8 @@ function Profile(props) {
                   name="phone"
                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   placeholder="314-159-2653"
+                  value={contact.phone}
+                  onChange={handleContact}
                 />
               </div>
               <div className="inputEmail">
@@ -161,6 +250,8 @@ function Profile(props) {
                   id="email"
                   name="email"
                   placeholder="you@domain.com"
+                  value={contact.email}
+                  onChange={handleContact}
                 />
                 <div className="delete-button">
                   <button className="delete-button" onClick={handleDelete}>

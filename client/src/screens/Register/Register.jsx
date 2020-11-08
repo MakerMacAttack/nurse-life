@@ -4,35 +4,32 @@ import { createUser } from "../../services/Users";
 import "./Register.css";
 
 export default function Register(props) {
-  const [profile, setProfile] = useState(
-    {
-      name: {
-        first: "",
-        last: "",
-      },
-      gender: "",
-      password: "",
-      birthday: {
-        year: 0,
-        month: 0,
-        day: 0,
-      },
-      work: {
-        institution: "",
-        state: "",
-        city: "",
-      },
-      contact: {
-        phone: "",
-        email: "",
-      },
-      privacy: {
-        anonymous: false,
-        locationServices: true,
-      },
+  const [profile, setProfile] = useState({
+    name: {
+      first: "",
+      last: "",
     },
-    { timestamps: true }
-  );
+    gender: "",
+    password: "",
+    birthday: {
+      year: 0,
+      month: 0,
+      day: 0,
+    },
+    work: {
+      institution: "",
+      state: "",
+      city: "",
+    },
+    contact: {
+      phone: "",
+      email: "",
+    },
+    privacy: {
+      anonymous: false,
+      locationServices: true,
+    },
+  });
   const [name, setName] = useState({
     first: "",
     last: "",
@@ -109,7 +106,6 @@ export default function Register(props) {
   }
 
   async function makeProfile(profile) {
-    console.log(profile);
     await createUser(profile);
     alert("Profile created. Please log-in with your new credentials.");
     history.push("/sign-in");
