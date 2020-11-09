@@ -254,12 +254,12 @@ function Profile(props) {
                   value={contact.email}
                   onChange={handleContact}
                 />
-                <div className="delete-button">
+              </div>
+              <div className="delete-button">
                   <button className="delete-button" onClick={handleDelete}>
                     Delete
                   </button>
                 </div>
-              </div>
             </div>
           </div>
         </form>
