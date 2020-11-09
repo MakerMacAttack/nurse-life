@@ -1,6 +1,6 @@
 .post-single-post {
   display: grid;
-  grid-template-columns: 20% auto 20% ;
+  grid-template-columns: 20% 60% 20% ;
   grid-template-rows: min-content auto min-content;
   box-shadow: 4px 4px 6px 0;
   border-radius: 4px;
@@ -26,8 +26,6 @@
   border-radius: 50%;
   grid-row-start: 1;
   grid-row-end: 3;
-  justify-self: center;
-  align-self: center;
 }
 
 .post-date, .post-name {
