@@ -26,8 +26,6 @@
   border-radius: 50%;
   grid-row-start: 1;
   grid-row-end: 3;
-  justify-self: center;
-  align-self: center;
 }
 
 .post-date, .post-name {
