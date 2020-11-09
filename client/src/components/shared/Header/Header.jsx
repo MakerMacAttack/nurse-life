@@ -26,7 +26,7 @@ const Header = (props) => {
               src="./assets/images/Main_Logo.png"
               alt="nurseLine"
             ></img>
-            <input className="searchBar" placeholder="Search Bar..."></input>
+            <input className="searchBar" placeholder=""></input>
           </div>
           <div className="nav-bottom-right">
             <Link to="/profile">
