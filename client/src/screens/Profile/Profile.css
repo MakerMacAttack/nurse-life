@@ -219,7 +219,7 @@ input {
   grid-area: b;
   display: grid;
   margin-bottom: 10px;
-  margin-left: -80px;
+  margin-right: -80px;
   grid-template-areas: "labelCity" "city";
 }
 
@@ -305,7 +305,7 @@ input {
   width: 300px;
   color: grey;
   margin-top: 05px;
-  margin-right: -55.5px;
+  margin-right: -68px;
   border-radius: 05px;
   border-color: lightgrey;
 }
@@ -313,8 +313,7 @@ input {
 .delete-button {
   border-radius: 4px;
   text-decoration: none;
-  margin-left: -700px;
-
+  margin-left: -710px;
   margin-top: 60px;
 }
 
