@@ -10,6 +10,10 @@
   background-color: white;
 }
 
+.post-date {
+  color: black;
+}
+
 .edit-button {
   justify-content: center;
   background-color: #199ff3;

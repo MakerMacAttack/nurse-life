@@ -5,7 +5,7 @@ import { deletePost } from "../../services/Posts.js";
 import { getUser } from "../../services/Users";
 
 const Post = (props) => {
-  const { content, imgURL } = props;
+  const { content, imgURL, date } = props;
   const [name, setName] = useState("");
   // let fullPost = null;
 
@@ -44,6 +44,7 @@ const Post = (props) => {
   return (
     <div className="post-single-post">
       <h4 className="post-name">{name}</h4>
+      <h4 className="post-date">{date}</h4>
       <h3 className="post-content">{content}</h3>
       {/.+\.(jpg|jpeg|png|apng|gif|bmp|svg)$/.test(imgURL) ? (
         <img className="post-image" src={imgURL} alt="post" />
