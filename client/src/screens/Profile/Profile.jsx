@@ -94,12 +94,13 @@ function Profile(props) {
   if (!props.user) {
     return <h1>Loading...</h1>;
   }
-
+  // comment what is happening here
   const date = `${props.user.birthday.year.toString()}-${
     props.user.birthday.month < 10
       ? `0${props.user.birthday.month.toString()}`
       : `${props.user.birthday.month.toString()}`
   }-${props.user.birthday.day.toString()}`;
+
 
   return (
     <div className="profile-master">

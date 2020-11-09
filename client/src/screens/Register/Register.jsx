@@ -173,6 +173,18 @@ export default function Register(props) {
                 <option value="other">Other</option>
                 <option value="not-say">Prefer not to say</option>
               </select>
+                <label className="labelPassword" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  className="password"
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Choose a password"
+                  value={profile.password}
+                  onChange={handleChange}
+                />
             </div>
 
             <div className="profile-bday-box">
@@ -261,21 +273,7 @@ export default function Register(props) {
                   onChange={handleContact}
                 />
               </div>
-              <div className="inputPassword">
-                <label className="labelPassword" htmlFor="password">
-                  Password
-                </label>
-                <input
-                  className="password"
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Choose a password"
-                  value={profile.password}
-                  onChange={handleChange}
-                />
               </div>
-            </div>
           </div>
         </form>
       </div>
