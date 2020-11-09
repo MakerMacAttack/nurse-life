@@ -1,6 +1,6 @@
 .profile-master {
   width: 100vw;
-  height: 100vh;
+  height: 1100px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -8,8 +8,8 @@
 }
 
 .profile-master2 {
-  width: 60vw;
-  height: 93vh;
+  width: 950px;
+  height: 900px;
   border-radius: 2px;
   box-shadow: 1px 1px 10px 0;
   padding: 20px;
@@ -126,8 +126,7 @@ input {
   margin-top: -70px;
   gap: 20px;
   grid-template-areas:
-    " d e "
-    " f g ";
+    " d e ";
 }
 
 .labelGender {
