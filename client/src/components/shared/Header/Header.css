@@ -1,10 +1,9 @@
 .header {
-  background-color: #14072c;
+  background-color: #1d1042;
   display: flex;
   flex-direction: column;
   height: 18vh;
 }
-
 .signInLink {
   color: white;
   font-weight: 400;
@@ -12,7 +11,6 @@
   margin-right: 7.5%;
   margin-top: 1%;
 }
-
 .nav-top {
   height: 25%;
   display: flex;
@@ -23,14 +21,12 @@
   display: flex;
   height: 75%;
 }
-
 .nav-bottom-right {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   width: 40vw;
 }
-
 .nav-bottom-left {
   display: flex;
   align-items: center;
@@ -41,7 +37,6 @@
   height: 120px;
   padding: 30px;
 }
-
 .searchBar {
   height: 35px;
   width: 40%;
@@ -54,8 +49,6 @@
 
 .accounts-div,
 .favorites-div {
-  display: flex;
-  justify-content: center;
   text-decoration: none;
 }
 
@@ -71,10 +64,6 @@
   width: 50px;
 }
 
-.favorites-div {
-  justify-content: flex-end;
-}
-
 .favorites {
   margin-right: -136px;
   margin-bottom: 20px;
@@ -82,4 +71,59 @@
 
 .favoritesLink {
   margin-top: 45px;
+}
+
+.messages {
+  width: 65px;
+  height: 65px;
+  margin-right: -60px;
+  margin-bottom: 10px;
+  margin-left: -10px;
+}
+
+.meditation {
+  width: 50px;
+  height: 45px;
+  margin-left: 30px;
+}
+
+.medLink {
+  margin-right: -30px;
+}
+
+.meditation-div {
+  color: #ffffff;
+}
+
+.messages-div {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.account {
+  margin-left: 40px;
+  margin-bottom: ;
+}
+
+.accountLink {
+  margin-right: -90px;
+  margin-left: -15px;
+}
+
+.accounts-div {
+  margin-right: 0px;
+}
+
+.favoritesLink {
+  margin-left: 75px;
+}
+
+.favorites-div {
+  margin-right: 25px;
+  margin-bottom: -5px;
+}
+
+.messagesLink {
+  margin-top: 50px;
+  margin-left: -10px;
 }

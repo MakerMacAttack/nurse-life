@@ -111,7 +111,7 @@ function Profile(props) {
               <img
                 className="profile-pic"
                 src="./assets/images/ProfilePic.png"
-                alt="User profile picture"
+                alt="User-profile"
               />
               <p className="edit-pic">Edit Profile Picture</p>
             </div>

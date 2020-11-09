@@ -1,4 +1,7 @@
 .post-single-post {
+  display: grid;
+  grid-template-columns: 20% auto 20% ;
+  grid-template-rows: min-content auto min-content;
   box-shadow: 4px 4px 6px 0;
   border-radius: 4px;
   margin: 0 auto;
@@ -10,8 +13,51 @@
   background-color: white;
 }
 
-.post-date {
+.post-user-data {
+  display: grid;
+  grid-template-columns: 100px auto 40% ;
+  grid-template-rows: 25px 25px 25px 25px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.post-profile-pic {
+  max-width: 90px;
+  border-radius: 50%;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  justify-self: center;
+  align-self: center;
+}
+
+.post-date, .post-name {
   color: black;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+.post-name {
+  justify-self: self-start;
+  align-self: center;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.post-date {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  justify-self: self-start;
+  align-self: center;
+  color: #5e5e5e;
+}
+
+.post-content-data {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.post-icons {
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 .edit-button {
