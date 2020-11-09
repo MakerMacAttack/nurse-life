@@ -1,62 +1,95 @@
-.post-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-  box-shadow: 0px 0px 3px 1px solid black;
-  padding: 10px;
+.post-single-post {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: min-content auto min-content;
+  box-shadow: 4px 4px 6px 0;
+  border-radius: 4px;
+  margin: 0 auto;
+  width: 50%;
+  padding: 20px;
+  justify-content: center;
+  margin-top: 30px;
   margin-bottom: 30px;
+  background-color: white;
 }
 
+.post-user-data {
+  display: grid;
+  grid-template-columns: 100px auto 40% ;
+  grid-template-rows: 35px 35px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.post-profile-pic {
+  max-width: 70px;
+  border-radius: 50%;
+  justify-self: center;
+  align-self: flex-start;
+}
+
+.post-date, .post-name {
+  color: black;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
 .post-name {
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 2px;
-  box-shadow: 4px 4px 6px 0;
-  margin: 0 auto;
-  width: 55%;
-  font-size: 24px;
-  padding: 10px;
-  margin-top: 20px;
+  justify-self: left;
+  align-self: center;
+  grid-row-start: 1;
+  align-self: start;
+}
+
+.post-date {
+  grid-row-start: 2;
+  justify-self: self-start;
+  align-self: center;
+  color: #5e5e5e;
+}
+
+.post-content-data {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
 }
 
 .post-content {
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 2px;
-  box-shadow: 4px 4px 6px 0;
-  margin: 0 auto;
-  width: 55%;
-  font-size: 18px;
-  padding: 10px;
-  margin-top: 20px;
+  font-weight: 500;
+  font-size: larger;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: left;
 }
 
 .post-image {
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 2px;
-  box-shadow: 4px 4px 6px 0;
-  margin: 0 auto;
-  width: 55%;
-  padding: 10px;
-  margin-top: 20px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  justify-self: center;
+}
+
+.post-icons {
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 .edit-button {
-  justify-content: center;
+  height: 30px;
+  grid-column-start: 2;
+  justify-self: end;
+  /* justify-content: center;
   background-color: #199ff3;
   color: #ffffff;
   border-radius: 4px;
-  text-decoration: none;
+  text-decoration: none; */
 }
 
 .delete-button {
-  justify-content: center;
-  /* background-color: #199ff3; */
-  /* color: #ffffff; */
+  height: 30px;
+  grid-column-start: 3;
+  /* justify-content: center;
   border-radius: 4px;
-  margin-top: 05px;
+  margin-top: 5px; */
 }
 
 .edit-button:hover {

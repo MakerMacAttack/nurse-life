@@ -5,7 +5,6 @@ import { getPost, updatePost } from "../../services/Posts.js";
 
 const PostEdit = (props) => {
   const [post, setPost] = useState({
-    name: "",
     content: "",
     imgURL: "",
   });
@@ -18,6 +17,7 @@ const PostEdit = (props) => {
     };
     fetchPost();
   }, [id]);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setPost({
@@ -25,6 +25,7 @@ const PostEdit = (props) => {
       [name]: value,
     });
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     let { id } = props.match.params;
@@ -38,32 +39,26 @@ const PostEdit = (props) => {
   return (
     <div className="post-edit">
       <form className="edit-form" onSubmit={handleSubmit}>
-        <input
-          className="input-name"
+        <span>Post Content</span>
+        <textarea
+          className="post-edit-input-content"
           placeholder=""
-          value={post.name}
-          name="name"
-          required
-          autoFocus
-          onChange={handleChange}
-        />
-        <input
-          className="input-content"
-          placeholder=""
+          maxLength="200"
           value={post.content}
           name="content"
           required
           onChange={handleChange}
         />
+        <span>Image URL</span>
         <input
-          className="edit-img"
+          className="post-edit-edit-img"
           placeholder=""
           value={post.imgURL}
           name="imgURL"
           onChange={handleChange}
         />
-        <button type="submit" className="save-button">
-          Save!
+        <button type="submit" className="post-edit-save-button">
+          Save! 
         </button>
       </form>
     </div>

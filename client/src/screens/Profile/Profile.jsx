@@ -1,77 +1,271 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./Profile.css";
+import { deleteUser, getUser, updateUser } from "../../services/Users.js";
 
-export default function Profile(props) {
+function Profile(props) {
+  const [profile, setProfile] = useState({
+    name: props.user.name,
+    gender: props.user.gender,
+    birthday: props.user.birthday,
+    work: props.user.work,
+    contact: props.user.contact,
+  });
+  const [name, setName] = useState(profile.name);
+  const [birthday, setBirthday] = useState(profile.birthday);
+  const [work, setWork] = useState(profile.work);
+  const [contact, setContact] = useState(profile.contact);
+
+  const history = useHistory();
+
+  async function handleDelete() {
+    localStorage.removeItem("loggedin");
+    await deleteUser(props.user._id);
+    await props.set((prev) => !prev);
+    history.push("/sign-in");
+  }
+
+  function handleContact(e) {
+    const { name, value } = e.target;
+    setContact({
+      ...contact,
+      [name]: value,
+    });
+  }
+
+  function handleWork(e) {
+    const { name, value } = e.target;
+    setWork({
+      ...work,
+      [name]: value,
+    });
+  }
+
+  function handleBirthday(e) {
+    const [year, month, day] = e.target.value.split("-");
+    setBirthday({
+      year,
+      month,
+      day,
+    });
+  }
+
+  function handleName(e) {
+    const { value } = e.target;
+    const part = e.target.name;
+    setName({
+      ...name,
+      [part]: value,
+    });
+  }
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setProfile({
+      ...profile,
+      [name]: value,
+    });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    await setProfile({
+      ...profile,
+      name,
+      birthday,
+      work,
+      contact,
+    });
+    alert("Your profile information has been updated.");
+  }
+
+  function handleUpdate(updatedUser) {
+    props.set(updatedUser);
+    localStorage.setItem("loggedin", props.user._id);
+  }
+
+  useEffect(() => {
+    async function makeUpdate() {
+      await updateUser(props.user._id, profile);
+      const updatedUser = await getUser(props.user.id);
+      handleUpdate(updatedUser);
+    }
+    makeUpdate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [profile]);
+
+  if (!props.user) {
+    return <h1>Loading...</h1>;
+  }
+  // comment what is happening here
+  const date = `${props.user.birthday.year.toString()}-${
+    props.user.birthday.month < 10
+      ? `0${props.user.birthday.month.toString()}`
+      : `${props.user.birthday.month.toString()}`
+  }-${props.user.birthday.day.toString()}`;
+
   return (
-    <div>
-      <div id="profile-header">
-        <div id="pic-box">
-          <img
-            id="profile-pic"
-            src="./assets/images/ProfilePic.png"
-            alt="User profile"
-          />
-          <p id="edit-pic">Edit Profile Picture</p>
+    <div className="profile-master">
+      <div className="profile-master2">
+        <div className="profile-header-top">
+          <div className="profile-header">
+            <div className="pic-box">
+              <img
+                className="profile-pic"
+                src="./assets/images/ProfilePic.png"
+                alt="User-profile"
+              />
+              <p className="edit-pic">Edit Profile Picture</p>
+            </div>
+            <h1>My Account</h1>
+          </div>
+          <div className="save-profile-button">
+            <form onSubmit={handleSubmit}>
+              <button type="submit" className="save-profile-button2">
+                Save
+              </button>
+            </form>
+          </div>
         </div>
-        <h1>My Account</h1>
+        <hr />
+        <form className="update-profile">
+          <div className="profile-updater">
+            <div className="Name">
+              <h2>Name</h2>
+            </div>
+            <div className="profile-name-box">
+              <label className="labelFirst" htmlFor="first">
+                First Name
+              </label>
+              <input
+                value={name.first}
+                className="first"
+                name="first"
+                onChange={handleName}
+              />
+              <label className="labelSecond" htmlFor="last">
+                Last Name
+              </label>
+              <input
+                value={name.last}
+                className="last"
+                name="last"
+                onChange={handleName}
+              />
+            </div>
+
+            <div className="profile-gender-box">
+              <label className="labelGender" htmlFor="gender">
+                {" "}
+                Gender{" "}
+              </label>
+
+              <select className="gender" name="gender" onChange={handleChange}>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="not-say">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div className="profile-bday-box">
+              <label className="labelBirthday" htmlFor="birthday">
+                Date of birth
+              </label>
+              <input
+                // value={`${profile.birthday.year}-${profile.birthday.month}-${profile.birthday.day}`}
+                value={date}
+                className="birthday"
+                type="date"
+                id="birthday"
+                name="birthday"
+                onChange={handleBirthday}
+              />
+            </div>
+
+            <div className="profile-work-box">
+              <div className="workplaceInput">
+                <label className="labelWorkplace" htmlFor="workplace">
+                  Institution/Work Place
+                </label>
+                <input
+                  value={work.institution}
+                  className="workplace"
+                  id="workplace"
+                  name="institution"
+                  placeholder="Where you work"
+                  onChange={handleWork}
+                />
+              </div>
+              <div className="cityInput">
+                <label className="labelCity" htmlFor="city">
+                  City
+                </label>
+                <input
+                  value={work.city}
+                  className="city"
+                  id="city"
+                  name="city"
+                  placeholder="City"
+                  onChange={handleWork}
+                />
+              </div>
+              <div className="stateInput">
+                <label className="labelState" htmlFor="state">
+                  State
+                </label>
+                <input
+                  value={work.state}
+                  className="state"
+                  id="state"
+                  name="state"
+                  placeholder="State"
+                  onChange={handleWork}
+                />
+              </div>
+            </div>
+
+            <div className="profile-contact-box">
+              <div className="inputPhone">
+                <label className="labelPhone" htmlFor="phone">
+                  Phone Number
+                </label>
+                <input
+                  className="phone"
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  placeholder="314-159-2653"
+                  value={contact.phone}
+                  onChange={handleContact}
+                />
+              </div>
+              <div className="inputEmail">
+                <label className="labelEmail" htmlFor="email">
+                  E-mail Address
+                </label>
+                <input
+                  className="email"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@domain.com"
+                  value={contact.email}
+                  onChange={handleContact}
+                />
+                <div className="delete-button">
+                  <button className="delete-button" onClick={handleDelete}>
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
-      <hr />
-      <form className="update-profile">
-        <button type="submit" className="save-profile-button">
-          Save
-        </button>
-        <div id="profile-updater">
-          <h2>Name</h2>
-          <div id="profile-name-box">
-            <label htmlFor="first">First Name</label>
-            <input id="first" name="first" placeholder="First Name" />
-            <label htmlFor="last">Last Name</label>
-            <input id="last" name="last" placeholder="Last Name" />
-          </div>
-          <div id="profile-gender-box">
-            <label htmlFor="gender">Gender</label>
-            <select id="gender" name="gender">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-              <option value="not-say">Prefer not to say</option>
-            </select>
-          </div>
-          <div id="profile-bday-box">
-            <label htmlFor="birthday">Date of Birth</label>
-            <input type="date" id="birthday" name="birthday" />
-          </div>
-          <div id="profile-work-box">
-            <label htmlFor="workplace">Institution/Work Place</label>
-            <input
-              id="workplace"
-              name="workplace"
-              placeholder="Where you work"
-            />
-            <label htmlFor="city">City</label>
-            <input id="city" name="city" placeholder="City" />
-            <label htmlFor="state">State</label>
-            <input id="state" name="state" placeholder="State" />
-          </div>
-          <div id="profile-contact-box">
-            <label htmlFor="phone">Phone Number</label>
-            <input
-              id="phone"
-              type="tel"
-              name="phone"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              placeholder="314-159-2653"
-            />
-            <label htmlFor="email">E-mail Address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="you@domain.com"
-            />
-          </div>
-        </div>
-      </form>
     </div>
   );
 }
+
+export default Profile;

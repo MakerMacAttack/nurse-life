@@ -1,0 +1,42 @@
+.post-edit {
+  height: 82vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f5;
+}
+
+.edit-form {
+  box-shadow: 4px 4px 6px 0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  padding: 3%;
+  background-color: #ffffff;
+  width: 50vw;
+}
+
+.post-edit-input-name,
+.post-edit-edit-img,
+.post-edit-save-button {
+  margin: 1%;
+  height: 80px;
+  width: 80%;
+  font-size: large;
+}
+
+.post-edit-input-content {
+  margin: 1%;
+  height: 300px;
+  width: 80%;
+  font-size: large;
+}
+
+.post-edit-save-button {
+  margin: 1%;
+  height: 120px;
+  width: 40%;
+}

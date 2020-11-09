@@ -1,0 +1,375 @@
+.profile-master {
+  width: 100vw;
+  height: 1100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 55px;
+}
+
+.profile-master2 {
+  width: 850px;
+  height: 900px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 10px 0;
+  padding: 20px;
+}
+
+.pic-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 100px;
+}
+
+.edit-pic {
+  font-size: 8px;
+  font-family: Helvetica;
+}
+
+.profile-pic {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.profile-header {
+  display: flex;
+}
+
+.profile-header-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.save-profile-button {
+  justify-self: end;
+  font-family: Helvetica;
+  position: relative;
+}
+
+.save-profile-button2 {
+  font-size: 15px;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
+
+.save-profile-button2:hover {
+  color: #199ff3;
+}
+
+.Name {
+  text-align: left;
+  margin: 0 0 0 90px;
+}
+
+.profile-updater {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+.profile-name-box {
+  margin: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "inputFirst inputLast"
+    "labelFirst labelLast";
+}
+
+.labelFirst {
+  font-family: Helvetica;
+  color: grey;
+  margin: 0 190px 0 0;
+  grid-area: labelFirst;
+}
+
+.labelSecond {
+  font-family: Helvetica;
+  color: grey;
+  margin: 0 605px 0 0;
+  grid-area: labelLast;
+}
+
+.first {
+  padding: 10px;
+  width: 300px;
+  margin: auto;
+  margin-left: 68px;
+  margin-top: -30px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: inputFirst;
+}
+
+input {
+  text-align: center;
+}
+
+.last {
+  padding: 10px;
+  width: 300px;
+  border-radius: 05px;
+  margin-top: -30px;
+  border-color: lightgrey;
+  grid-area: inputLast;
+}
+
+.profile-gender-box {
+  display: grid;
+  margin: 20px;
+  margin-top: -70px;
+  gap: 20px;
+  grid-template-areas:
+    " d e "
+    " f g ";
+}
+
+.labelGender {
+  font-family: Helvetica;
+  color: black;
+  text-align: center;
+  margin: 70px 970px 0 70px;
+  margin-top: 87px;
+  grid-area: d;
+}
+
+.gender {
+  padding: 10px;
+  width: 325px;
+  /* margin-top: 15px; */
+  margin: auto;
+  margin-left: 68px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: f;
+}
+
+.labelPassword {
+  font-family: Helvetica;
+  color: black;
+  text-align: left;
+  margin-top: -37px;
+  margin-left: -688px;
+  grid-area: g;
+  
+}
+
+.password {
+  padding: 10px;
+  width: 300px;
+  border-radius: 05px;
+  margin-top: 2px;
+  margin-left: -692px;
+  border-color: lightgrey;
+  grid-area: g;
+}
+
+
+.profile-bday-box {
+  display: grid;
+  margin: 20px;
+  grid-template-areas:
+    "inputBirthday"
+    "labelBirthday";
+}
+
+.labelBirthday {
+  font-family: Helvetica;
+  color: black;
+  text-align: center;
+  margin: 0 880px 0 0;
+  grid-area: inputBirthday;
+}
+
+.birthday {
+  padding: 10px;
+  width: 300px;
+  color: grey;
+  margin-top: 05px;
+  margin: auto;
+  margin-left: 68px;
+  border-radius: 05px;
+  border-color: lightgrey;
+  grid-area: labelBirthday;
+}
+
+.profile-work-box {
+  display: grid;
+  margin: 20px;
+  grid-template-areas:
+    " a b "
+    " c ";
+}
+
+.labelWorkplace {
+  font-family: Helvetica;
+  color: black;
+  text-align: left;
+  grid-area: labelWorkplace;
+}
+
+.labelCity {
+  font-family: Helvetica;
+  color: black;
+  text-align: left;
+  grid-area: labelCity;
+}
+
+.labelState {
+  font-family: Helvetica;
+  color: black;
+  text-align: left;
+  margin-top: 15px;
+  grid-area: labelState;
+}
+
+.workplaceInput {
+  grid-area: a;
+  display: grid;
+  margin-bottom: 10px;
+  margin: auto;
+  margin-left: 68px;
+  padding-right: 0px;
+  grid-template-areas: "labelWorkplace" "workplace";
+}
+
+.workplace {
+  grid-area: workplace;
+  padding: 10px;
+  width: 300px;
+  color: grey;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+}
+
+.cityInput {
+  grid-area: b;
+  display: grid;
+  margin-bottom: 10px;
+  margin: auto;
+  margin-right: 59.5%;
+  grid-template-areas: "labelCity" "city";
+}
+
+.city {
+  grid-area: city;
+  padding: 10px;
+  width: 300px;
+  color: grey;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+}
+
+.stateInput {
+  grid-area: c;
+  display: grid;
+  margin-bottom: 10px;
+  margin: auto;
+  margin-left: 68px;
+  padding-right: 95px;
+  grid-template-areas: "labelState" "state";
+}
+
+.state {
+  grid-area: state;
+  padding: 10px;
+  width: 300px;
+  color: grey;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+}
+
+.profile-contact-box {
+  display: grid;
+  margin: 20px;
+  grid-template-areas:
+    " x y "
+    " . . ";
+}
+
+.labelPhone {
+  font-family: Helvetica;
+  color: black;
+  text-align: left;
+  grid-area: labelPhone;
+}
+
+.labelEmail {
+  font-family: Helvetica;
+  color: black;
+  text-align: left;
+  grid-area: labelEmail;
+}
+
+.inputPhone {
+  grid-area: x;
+  display: grid;
+  margin-bottom: 10px;
+  margin: auto;
+  margin-left: 68px;
+  padding-right: 0px;
+  grid-template-areas: "labelPhone" "phone";
+}
+
+.phone {
+  grid-area: phone;
+  padding: 10px;
+  width: 300px;
+  color: grey;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+}
+
+.inputEmail {
+  grid-area: y;
+  display: grid;
+  margin-bottom: 10px;
+  margin: auto;
+  margin-right: 55%;
+  padding-right: 0px;
+  grid-template-areas: "labelEmail" "email";
+}
+
+.email {
+  grid-area: email;
+  padding: 10px;
+  width: 300px;
+  color: grey;
+  margin-top: 05px;
+  border-radius: 05px;
+  border-color: lightgrey;
+}
+
+@media screen and (max-width: 700px) {
+  .profile-master {
+   grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media screen and (max-width: 425px) {
+ .profile-master {
+  grid-template-columns: 1fr;
+}
+}
+
+@media screen and (max-width: 700px) {
+  .profile-master2 {
+   grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media screen and (max-width: 425px) {
+ .profile-master2 {
+  grid-template-columns: 1fr;
+}
+}
