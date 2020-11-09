@@ -84,10 +84,14 @@ function Profile(props) {
     localStorage.setItem("loggedin", props.user._id);
   }
 
-  useEffect(async () => {
-    await updateUser(props.user._id, profile);
-    const updatedUser = await getUser(props.user.id);
-    handleUpdate(updatedUser);
+  useEffect(() => {
+    async function makeUpdate() {
+      await updateUser(props.user._id, profile);
+      const updatedUser = await getUser(props.user.id);
+      handleUpdate(updatedUser);
+    }
+    makeUpdate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [profile]);
 
   if (!props.user) {
