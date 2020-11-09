@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./Profile.css";
 import { deleteUser, getUser, updateUser } from "../../services/Users.js";
@@ -67,16 +67,16 @@ function Profile(props) {
     });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setProfile({
+    await setProfile({
       ...profile,
       name,
       birthday,
       work,
       contact,
     });
-    makeProfile(profile);
+    alert("Your profile information has been updated.");
   }
 
   function handleUpdate(updatedUser) {
@@ -84,12 +84,11 @@ function Profile(props) {
     localStorage.setItem("loggedin", props.user._id);
   }
 
-  async function makeProfile(profile) {
+  useEffect(async () => {
     await updateUser(props.user._id, profile);
-    alert("Your profile information has been updated.");
     const updatedUser = await getUser(props.user.id);
     handleUpdate(updatedUser);
-  }
+  }, [profile]);
 
   if (!props.user) {
     return <h1>Loading...</h1>;
@@ -100,7 +99,6 @@ function Profile(props) {
       ? `0${props.user.birthday.month.toString()}`
       : `${props.user.birthday.month.toString()}`
   }-${props.user.birthday.day.toString()}`;
-
 
   return (
     <div className="profile-master">
