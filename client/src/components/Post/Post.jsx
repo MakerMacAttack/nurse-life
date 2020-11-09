@@ -67,9 +67,15 @@ const Post = (props) => {
   return (
     <div className="post-single-post">
       <div className="post-user-data">
-        <img className="post-profile-pic" src="./assets/images/blank-profile-picture.png"/>
+        <img
+          className="post-profile-pic"
+          src="./assets/images/blank-profile-picture.png"
+          alt="user's face"
+        />
         <h3 className="post-name">{name}</h3>
-        <h3 className="post-date">{alphaMonth} {numericDate}, {timeStamp[0]}</h3>
+        <h3 className="post-date">
+          {alphaMonth} {numericDate}, {timeStamp[0]}
+        </h3>
       </div>
       <div className="post-content-data">
         <h3 className="post-content">{content}</h3>

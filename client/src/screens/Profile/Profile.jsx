@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./Profile.css";
 import { deleteUser, getUser, updateUser } from "../../services/Users.js";
@@ -67,16 +67,16 @@ function Profile(props) {
     });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setProfile({
+    await setProfile({
       ...profile,
       name,
       birthday,
       work,
       contact,
     });
-    makeProfile(profile);
+    alert("Your profile information has been updated.");
   }
 
   function handleUpdate(updatedUser) {
@@ -84,17 +84,20 @@ function Profile(props) {
     localStorage.setItem("loggedin", props.user._id);
   }
 
-  async function makeProfile(profile) {
-    await updateUser(props.user._id, profile);
-    alert("Your profile information has been updated.");
-    const updatedUser = await getUser(props.user.id);
-    handleUpdate(updatedUser);
-  }
+  useEffect(() => {
+    async function makeUpdate() {
+      await updateUser(props.user._id, profile);
+      const updatedUser = await getUser(props.user.id);
+      handleUpdate(updatedUser);
+    }
+    makeUpdate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [profile]);
 
   if (!props.user) {
     return <h1>Loading...</h1>;
   }
-
+  // comment what is happening here
   const date = `${props.user.birthday.year.toString()}-${
     props.user.birthday.month < 10
       ? `0${props.user.birthday.month.toString()}`
