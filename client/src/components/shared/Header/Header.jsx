@@ -39,21 +39,21 @@ const Header = (props) => {
                 <span className="accountLink">Account</span>
               </div>
             </Link>
-            <div className="favorites-div">
+            <div className="meditation-div">
               <img
-                className="favorites"
+                className="meditation"
                 src="./assets/images/nav_bar_meditate.png"
-                alt="favorites"
+                alt="meditation"
               ></img>
-              <span className="favoritesLink">Meditation</span>
+              <span className="medLink">Meditation</span>
             </div>
-            <div className="favorites-div">
+            <div className="messages-div">
               <img
-                className="favorites"
+                className="messages"
                 src="./assets/images/nav_bar_messages.png"
-                alt="favorites"
+                alt="messages"
               ></img>
-              <span className="favoritesLink">Messages</span>
+              <span className="messagesLink">Messages</span>
             </div>
             <div className="favorites-div">
               <img
