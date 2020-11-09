@@ -45,27 +45,52 @@ const Post = (props) => {
 
   fetchName();
 
+  const alphaMonths = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let timeStamp = date.split("-", 3);
+  let numericDate = timeStamp[2].split("T", 1);
+  let numericMonth = timeStamp[1];
+  let alphaMonth = alphaMonths[numericMonth - 1];
+
   return (
     <div className="post-single-post">
-      <h4 className="post-name">{name}</h4>
-      <h4 className="post-date">{date}</h4>
-      <h3 className="post-content">{content}</h3>
-      {/.+\.(jpg|jpeg|png|apng|gif|bmp|svg)$/.test(imgURL) ? (
-        <img className="post-image" src={imgURL} alt="post" />
-      ) : (
-        <div></div>
-      )}
-      <div>
-        <button className="edit-button">
-          <Link className="edit-link" to={`/posts/${props.id}/edit`}>
-            Edit
-          </Link>
-        </button>
+      <div className="post-user-data">
+        <h4 className="post-name">{name}</h4>
+        <h4 className="post-date">
+          {alphaMonth} {numericDate}, {timeStamp[0]}
+        </h4>
       </div>
-      <div className="delete-button">
-        <button className="delete-button" onClick={handleDelete}>
-          Delete
-        </button>
+      <div className="post-content-data">
+        <h3 className="post-content">{content}</h3>
+        {/.+\.(jpg|jpeg|png|apng|gif|bmp|svg)$/.test(imgURL) ? (
+          <img className="post-image" src={imgURL} alt="post" />
+        ) : (
+          <div></div>
+        )}
+        <div>
+          <button className="edit-button">
+            <Link className="edit-link" to={`/posts/${props.id}/edit`}>
+              Edit
+            </Link>
+          </button>
+        </div>
+        <div className="delete-button">
+          <button className="delete-button" onClick={handleDelete}>
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );

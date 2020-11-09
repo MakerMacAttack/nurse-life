@@ -1,4 +1,6 @@
 .post-single-post {
+  display: grid;
+  grid-template-columns: 20% auto 20% ;
   box-shadow: 4px 4px 6px 0;
   border-radius: 4px;
   margin: 0 auto;
@@ -10,8 +12,23 @@
   background-color: white;
 }
 
+.post-user-data {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
 .post-date {
   color: black;
+}
+
+.post-content-data {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.post-icons {
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 .edit-button {
