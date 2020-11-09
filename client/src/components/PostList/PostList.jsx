@@ -13,6 +13,7 @@ export default function PostList(props) {
           id={post._id}
           set={props.set}
           user={post.user}
+          date={post.createdAt}
         />
       ))}
     </div>

@@ -17,6 +17,7 @@ const PostEdit = (props) => {
     };
     fetchPost();
   }, [id]);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setPost({
@@ -24,6 +25,7 @@ const PostEdit = (props) => {
       [name]: value,
     });
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     let { id } = props.match.params;
@@ -56,7 +58,7 @@ const PostEdit = (props) => {
           onChange={handleChange}
         />
         <button type="submit" className="post-edit-save-button">
-          Save!
+          Save! 
         </button>
       </form>
     </div>

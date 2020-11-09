@@ -4,46 +4,112 @@ import { createUser } from "../../services/Users";
 import "./Register.css";
 
 export default function Register(props) {
-  const [profile, setProfile] = useState(
-    {
-      name: {
-        first: "",
-        last: "",
-      },
-      gender: "",
-      password: "",
-      birthday: {
-        year: 0,
-        month: 0,
-        day: 0,
-      },
-      work: {
-        institution: "",
-        state: "",
-        city: "",
-      },
-      contact: {
-        phone: "",
-        email: "",
-      },
-      privacy: {
-        anonymous: false,
-        locationServices: true,
-      },
+  const [profile, setProfile] = useState({
+    name: {
+      first: "",
+      last: "",
     },
-    { timestamps: true }
-  );
+    gender: "",
+    password: "",
+    birthday: {
+      year: 0,
+      month: 0,
+      day: 0,
+    },
+    work: {
+      institution: "",
+      state: "",
+      city: "",
+    },
+    contact: {
+      phone: "",
+      email: "",
+    },
+    privacy: {
+      anonymous: false,
+      locationServices: true,
+    },
+  });
+  const [name, setName] = useState({
+    first: "",
+    last: "",
+  });
+  const [birthday, setBirthday] = useState({
+    year: 0,
+    month: 0,
+    day: 0,
+  });
+  const [work, setWork] = useState({
+    institution: "",
+    state: "",
+    city: "",
+  });
+  const [contact, setContact] = useState({
+    phone: "",
+    email: "",
+  });
 
-  const handleChange = (event) => {
-    const { group, name, value } = event.target;
+  const history = useHistory();
+
+  function handleContact(e) {
+    const { name, value } = e.target;
+    setContact({
+      ...contact,
+      [name]: value,
+    });
+  }
+
+  function handleWork(e) {
+    const { name, value } = e.target;
+    setWork({
+      ...work,
+      [name]: value,
+    });
+  }
+
+  function handleBirthday(e) {
+    const [year, month, day] = e.target.value.split("-");
+    setBirthday({
+      year,
+      month,
+      day,
+    });
+  }
+
+  function handleName(e) {
+    const { value } = e.target;
+    const part = e.target.name;
+    setName({
+      ...name,
+      [part]: value,
+    });
+  }
+
+  function handleChange(e) {
+    const { name, value } = e.target;
     setProfile({
       ...profile,
-      [group]: {
-        ...[group],
-        [name]: value,
-      }, // Nest
+      [name]: value,
     });
-  };
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setProfile({
+      ...profile,
+      name,
+      birthday,
+      work,
+      contact,
+    });
+    await makeProfile(profile);
+  }
+
+  async function makeProfile(profile) {
+    await createUser(profile);
+    alert("Profile created. Please log-in with your new credentials.");
+    history.push("/sign-in");
+  }
 
   return (
     <div className="profile-master">
@@ -61,9 +127,11 @@ export default function Register(props) {
             <h1>Create Account</h1>
           </div>
           <div className="save-profile-button">
-            <button type="submit" className="save-profile-button2">
-              Create Account
-            </button>
+            <form onSubmit={handleSubmit}>
+              <button type="submit" className="save-profile-button2">
+                Create Account
+              </button>
+            </form>
           </div>
         </div>
         <hr />
@@ -78,14 +146,19 @@ export default function Register(props) {
               </label>
               <input
                 className="first"
-                group="name"
                 name="first"
-                onChange={handleChange}
+                value={name.first}
+                onChange={handleName}
               />
               <label className="labelSecond" htmlFor="last">
                 Last Name
               </label>
-              <input className="last" name="last" />
+              <input
+                className="last"
+                name="last"
+                value={name.last}
+                onChange={handleName}
+              />
             </div>
 
             <div className="profile-gender-box">
@@ -94,7 +167,7 @@ export default function Register(props) {
                 Gender{" "}
               </label>
 
-              <select className="gender" name="gender">
+              <select className="gender" name="gender" onChange={handleChange}>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
@@ -111,6 +184,8 @@ export default function Register(props) {
                 type="date"
                 id="birthday"
                 name="birthday"
+                value={`${birthday.year}-${birthday.month}-${birthday.day}`}
+                onChange={handleBirthday}
               />
             </div>
 
@@ -122,8 +197,10 @@ export default function Register(props) {
                 <input
                   className="workplace"
                   id="workplace"
-                  name="workplace"
+                  name="institution"
                   placeholder="Where you work"
+                  value={work.institution}
+                  onChange={handleWork}
                 />
               </div>
               <div className="cityInput">
@@ -135,6 +212,8 @@ export default function Register(props) {
                   id="city"
                   name="city"
                   placeholder="City"
+                  value={work.city}
+                  onChange={handleWork}
                 />
               </div>
               <div className="stateInput">
@@ -146,6 +225,8 @@ export default function Register(props) {
                   id="state"
                   name="state"
                   placeholder="State"
+                  value={work.state}
+                  onChange={handleWork}
                 />
               </div>
             </div>
@@ -162,6 +243,8 @@ export default function Register(props) {
                   name="phone"
                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   placeholder="314-159-2653"
+                  value={contact.phone}
+                  onChange={handleContact}
                 />
               </div>
               <div className="inputEmail">
@@ -174,6 +257,22 @@ export default function Register(props) {
                   id="email"
                   name="email"
                   placeholder="you@domain.com"
+                  value={contact.email}
+                  onChange={handleContact}
+                />
+              </div>
+              <div className="inputPassword">
+                <label className="labelPassword" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  className="password"
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Choose a password"
+                  value={profile.password}
+                  onChange={handleChange}
                 />
               </div>
             </div>

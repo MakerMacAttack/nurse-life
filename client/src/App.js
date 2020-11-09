@@ -30,14 +30,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Header set={setUser}/>
       <Switch>
         <Route exact path="/" render={() => (<Feed user={user} setUser={setUser} />)} />
         <Route path="/add-post" component={PostCreate} />
         <Route exact path="/posts/:id/edit" component={PostEdit} />
         <Route
           path="/profile"
-          render={() => user && <Profile user={user} />} />
+          render={() => user && <Profile user={user} set={setUser} />} />
         <Route path="/sign-in" render={() => <SignIn setUser={setUser} />} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/register" component={Register} />
