@@ -15,8 +15,12 @@ const Post = (props) => {
   }
 
   async function fetchName() {
-    const user = await getUser(props.user);
-    populateName(user);
+    try {
+      const user = await getUser(props.user);
+      populateName(user);
+    } catch (error) {
+      setName(`Author has been deleted`);
+    }
   }
 
   async function handleDelete() {
@@ -53,11 +57,15 @@ const Post = (props) => {
       )}
       <div>
         <button className="edit-button">
-          <Link className="edit-link" to={`/posts/${props.id}/edit`}>Edit</Link>
+          <Link className="edit-link" to={`/posts/${props.id}/edit`}>
+            Edit
+          </Link>
         </button>
       </div>
       <div className="delete-button">
-        <button className="delete-button" onClick={handleDelete}>Delete</button>
+        <button className="delete-button" onClick={handleDelete}>
+          Delete
+        </button>
       </div>
     </div>
   );
