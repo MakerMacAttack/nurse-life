@@ -6,6 +6,13 @@
   justify-content: space-evenly;
 }
 
+.post-create-input-content {
+  margin: 1%;
+  height: 100px;
+  width: 80%;
+  font-size: large;
+}
+
 input:focus,
 content:focus {
   outline: none;

@@ -36,13 +36,15 @@ const PostCreate = (props) => {
     <form className="post-form" onSubmit={handleSubmit}>
       <div className="container">
         <div className="content-area">
-          <input
-            className="input-content"
-            placeholder="Start a post..."
-            value={post.content}
-            name="content"
-            onChange={handleChange}
-          />
+        <textarea
+          className="post-create-input-content"
+          placeholder="Start a Post ..."
+          maxLength="200"
+          value={post.content}
+          name="content"
+          required
+          onChange={handleChange}
+        />
         </div>
         <div className="image-area">
           <input

@@ -85,16 +85,12 @@ const Post = (props) => {
           <div></div>
         )}
         <div>
-          <button className="edit-button">
             <Link className="edit-link" to={`/posts/${props.id}/edit`}>
-              Edit
+              <img className="edit-button" src="./assets/images/edit-icon.png" alt="edit"></img>
             </Link>
-          </button>
         </div>
         <div className="delete-button">
-          <button className="delete-button" onClick={handleDelete}>
-            Delete
-          </button>
+          <img className="delete-button" src="./assets/images/delete-icon.png" alt="edit" onClick={handleDelete}></img>
         </div>
       </div>
     </div>
