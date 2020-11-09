@@ -15,8 +15,12 @@ const Post = (props) => {
   }
 
   async function fetchName() {
-    const user = await getUser(props.user);
-    populateName(user);
+    try {
+      const user = await getUser(props.user);
+      populateName(user);
+    } catch (error) {
+      setName(`Author has been deleted`);
+    }
   }
 
   async function handleDelete() {
@@ -41,11 +45,24 @@ const Post = (props) => {
 
   fetchName();
 
-  const alphaMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  const alphaMonths = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   let timeStamp = date.split("-", 3);
-  let numericDate = timeStamp[2].split("T", 1)
-  let numericMonth = timeStamp[1]
-  let alphaMonth=alphaMonths[numericMonth-1]
+  let numericDate = timeStamp[2].split("T", 1);
+  let numericMonth = timeStamp[1];
+  let alphaMonth = alphaMonths[numericMonth - 1];
 
   return (
     <div className="post-single-post">
@@ -57,19 +74,21 @@ const Post = (props) => {
       <div className="post-content-data">
         <h3 className="post-content">{content}</h3>
         {/.+\.(jpg|jpeg|png|apng|gif|bmp|svg)$/.test(imgURL) ? (
-        <img className="post-image" src={imgURL} alt="post" />
+          <img className="post-image" src={imgURL} alt="post" />
         ) : (
-        <div></div>
-          )}
-      </div>
-      <div className="post-icons">
+          <div></div>
+        )}
         <div>
           <button className="edit-button">
-            <Link className="edit-link" to={`/posts/${props.id}/edit`}>Edit</Link>
+            <Link className="edit-link" to={`/posts/${props.id}/edit`}>
+              Edit
+            </Link>
           </button>
         </div>
         <div className="delete-button">
-          <button className="delete-button" onClick={handleDelete}>Delete</button>
+          <button className="delete-button" onClick={handleDelete}>
+            Delete
+          </button>
         </div>
       </div>
     </div>
