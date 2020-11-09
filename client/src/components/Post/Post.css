@@ -1,6 +1,6 @@
 .post-single-post {
   display: grid;
-  grid-template-columns: 20% 60% 20% ;
+  grid-template-columns: 20% 60% 20%;
   grid-template-rows: min-content auto min-content;
   box-shadow: 4px 4px 6px 0;
   border-radius: 4px;
@@ -16,16 +16,16 @@
 .post-user-data {
   display: grid;
   grid-template-columns: 100px auto 40% ;
-  grid-template-rows: 25px 25px 25px 25px;
+  grid-template-rows: 35px 35px;
   grid-column-start: 1;
   grid-column-end: 4;
 }
 
 .post-profile-pic {
-  max-width: 90px;
+  max-width: 70px;
   border-radius: 50%;
-  grid-row-start: 1;
-  grid-row-end: 3;
+  justify-self: center;
+  align-self: flex-start;
 }
 
 .post-date, .post-name {
@@ -34,15 +34,14 @@
   grid-column-end: 4;
 }
 .post-name {
-  justify-self: self-start;
+  justify-self: left;
   align-self: center;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 1;
+  align-self: start;
 }
 
 .post-date {
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-row-start: 2;
   justify-self: self-start;
   align-self: center;
   color: #5e5e5e;
@@ -51,6 +50,22 @@
 .post-content-data {
   grid-column-start: 1;
   grid-column-end: 4;
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+}
+
+.post-content {
+  font-weight: 500;
+  font-size: larger;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: left;
+}
+
+.post-image {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  justify-self: center;
 }
 
 .post-icons {
@@ -59,17 +74,22 @@
 }
 
 .edit-button {
-  justify-content: center;
+  height: 30px;
+  grid-column-start: 2;
+  justify-self: end;
+  /* justify-content: center;
   background-color: #199ff3;
   color: #ffffff;
   border-radius: 4px;
-  text-decoration: none;
+  text-decoration: none; */
 }
 
 .delete-button {
-  justify-content: center;
+  height: 30px;
+  grid-column-start: 3;
+  /* justify-content: center;
   border-radius: 4px;
-  margin-top: 05px;
+  margin-top: 5px; */
 }
 
 .edit-button:hover {
