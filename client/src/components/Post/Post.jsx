@@ -42,8 +42,8 @@ const Post = (props) => {
   fetchName();
 
   return (
-    <>
-      <h2 className="post-name">{name}</h2>
+    <div className="post-single-post">
+      <h4 className="post-name">{name}</h4>
       <h3 className="post-content">{content}</h3>
       {/.+\.(jpg|jpeg|png|apng|gif|bmp|svg)$/.test(imgURL) ? (
         <img className="post-image" src={imgURL} alt="post" />
@@ -52,17 +52,13 @@ const Post = (props) => {
       )}
       <div>
         <button className="edit-button">
-          <Link className="edit-link" to={`/posts/${props.id}/edit`}>
-            Edit
-          </Link>
+          <Link className="edit-link" to={`/posts/${props.id}/edit`}>Edit</Link>
         </button>
       </div>
       <div className="delete-button">
-        <button className="delete-button" onClick={handleDelete}>
-          Delete
-        </button>
+        <button className="delete-button" onClick={handleDelete}>Delete</button>
       </div>
-    </>
+    </div>
   );
 };
 
