@@ -8,7 +8,7 @@
 }
 
 .profile-master2 {
-  width: 950px;
+  width: 850px;
   height: 900px;
   border-radius: 2px;
   box-shadow: 1px 1px 10px 0;
@@ -126,21 +126,23 @@ input {
   margin-top: -70px;
   gap: 20px;
   grid-template-areas:
-    " d e ";
+    " d e "
+    " f g ";
 }
 
 .labelGender {
   font-family: Helvetica;
   color: black;
   text-align: center;
-  margin: 70px 920px 0 70px;
+  margin: 70px 970px 0 70px;
+  margin-top: 87px;
   grid-area: d;
 }
 
 .gender {
   padding: 10px;
   width: 325px;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   margin: auto;
   margin-left: 68px;
   border-radius: 05px;
@@ -152,26 +154,20 @@ input {
   font-family: Helvetica;
   color: black;
   text-align: left;
-  margin-top: -15px;
-  margin: 0px 0px 0px 50;
-  grid-area: e;
+  margin-top: -37px;
+  margin-left: -688px;
+  grid-area: g;
   
-}
-
-.inputPassword {
-  grid-area: e;
-  display: grid;
-  margin: auto;
-  grid-template-areas: labelPassword;
 }
 
 .password {
   padding: 10px;
   width: 300px;
   border-radius: 05px;
-  margin-top: 20px;
+  margin-top: 2px;
+  margin-left: -692px;
   border-color: lightgrey;
-  grid-area: password;
+  grid-area: g;
 }
 
 
@@ -229,6 +225,7 @@ input {
   font-family: Helvetica;
   color: black;
   text-align: left;
+  margin-top: 15px;
   grid-area: labelState;
 }
 
