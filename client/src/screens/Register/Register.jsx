@@ -175,6 +175,20 @@ export default function Register(props) {
               </select>
             </div>
 
+            <div className="inputPassword">
+                <label className="labelPassword" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  className="password"
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Choose a password"
+                  value={profile.password}
+                  onChange={handleChange}
+                />
+            
             <div className="profile-bday-box">
               <label className="labelBirthday" htmlFor="birthday">
                 Date of birth
@@ -261,19 +275,6 @@ export default function Register(props) {
                   onChange={handleContact}
                 />
               </div>
-              <div className="inputPassword">
-                <label className="labelPassword" htmlFor="password">
-                  Password
-                </label>
-                <input
-                  className="password"
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Choose a password"
-                  value={profile.password}
-                  onChange={handleChange}
-                />
               </div>
             </div>
           </div>

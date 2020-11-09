@@ -62,3 +62,23 @@ a {
         padding: 3px;
     }
 }
+
+a:link {
+  text-decoration: none;
+  color:red;
+}
+
+a:visited {
+  text-decoration: none;
+  color:red;
+}
+
+a:hover {
+  text-decoration: underline;
+  color:red;
+}
+
+a:active {
+  text-decoration: underline;
+  color:red;
+}
