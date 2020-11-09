@@ -173,9 +173,7 @@ export default function Register(props) {
                 <option value="other">Other</option>
                 <option value="not-say">Prefer not to say</option>
               </select>
-            </div>
-
-            <div className="inputPassword">
+              <div className="inputPassword">
                 <label className="labelPassword" htmlFor="password">
                   Password
                 </label>
@@ -188,7 +186,9 @@ export default function Register(props) {
                   value={profile.password}
                   onChange={handleChange}
                 />
-            
+            </div>
+            </div>
+
             <div className="profile-bday-box">
               <label className="labelBirthday" htmlFor="birthday">
                 Date of birth
@@ -276,7 +276,6 @@ export default function Register(props) {
                 />
               </div>
               </div>
-            </div>
           </div>
         </form>
       </div>

@@ -123,56 +123,57 @@ input {
 .profile-gender-box {
   display: grid;
   margin: 20px;
+  margin-top: -70px;
   gap: 20px;
   grid-template-areas:
-    "inputGender, inputPassword"
-    "labelGender, labelPassword";
+    " d e "
+    " f g ";
 }
 
 .labelGender {
   font-family: Helvetica;
   color: black;
   text-align: center;
-  margin: 0 920px 0 0;
-  grid-area: inputGender;
+  margin: 70px 920px 0 70px;
+  grid-area: d;
 }
 
 .gender {
   padding: 10px;
   width: 325px;
-  margin-top: 05px;
+  margin-top: 15px;
   margin: auto;
   margin-left: 68px;
   border-radius: 05px;
   border-color: lightgrey;
-  grid-area: labelGender;
+  grid-area: f;
 }
 
 .labelPassword {
   font-family: Helvetica;
   color: black;
-  text-align: center;
-  /* margin: 0 920px 0 0; */
-  grid-area: inputPassword;
+  text-align: left;
+  margin-top: -15px;
+  margin: 0px 0px 0px 50;
+  grid-area: e;
+  
+}
+
+.inputPassword {
+  grid-area: e;
+  display: grid;
+  margin: auto;
+  grid-template-areas: labelPassword;
 }
 
 .password {
   padding: 10px;
   width: 300px;
   border-radius: 05px;
-  margin-top: -30px;
+  margin-top: 20px;
   border-color: lightgrey;
-  grid-area: labelPassword;
+  grid-area: password;
 }
-
-
-
-
-
-
-
-
-
 
 
 .profile-bday-box {
