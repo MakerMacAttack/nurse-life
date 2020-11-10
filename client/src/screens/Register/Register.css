@@ -376,6 +376,6 @@ input {
 
 @media screen and (min-width: 1600px) {
   .profile-master2 {
-   background-color: green; 
+    font-family: Helvetica;
   }
 }
