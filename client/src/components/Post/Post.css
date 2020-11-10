@@ -73,31 +73,21 @@
   grid-column-end: 4;
 }
 
-.edit-button {
+.post-edit-button {
   height: 30px;
-  grid-column-start: 2;
-  justify-self: end;
-  /* justify-content: center;
-  background-color: #199ff3;
-  color: #ffffff;
-  border-radius: 4px;
-  text-decoration: none; */
 }
 
-.delete-button {
+.post-delete-button {
   height: 30px;
   grid-column-start: 3;
-  /* justify-content: center;
-  border-radius: 4px;
-  margin-top: 5px; */
 }
 
-.edit-button:hover {
+.post-edit-button:hover {
   justify-content: center;
   color: #000000;
 }
 
-.delete-button:hover {
+.post-delete-button:hover {
   justify-content: center;
   color: #000000;
 }
