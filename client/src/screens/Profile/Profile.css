@@ -324,12 +324,12 @@ input {
 
 @media screen and (max-width: 700px) {
   .profile-master {
-   grid-template-columns: repeat(2, 1fr);
-}
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 425px) {
- .profile-master {
-  grid-template-columns: 1fr;
-}
+  .profile-master {
+    grid-template-columns: 1fr;
+  }
 }
