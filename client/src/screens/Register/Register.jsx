@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { createUser } from "../../services/Users";
 import "./Register.css";
@@ -48,6 +48,7 @@ export default function Register(props) {
     phone: "",
     email: "",
   });
+  const [profileTrigger, setProfileTrigger] = useState(false);
 
   const history = useHistory();
 
@@ -102,14 +103,18 @@ export default function Register(props) {
       work,
       contact,
     });
-    await makeProfile(profile);
+    setProfileTrigger((prev) => !prev);
   }
 
-  async function makeProfile(profile) {
-    await createUser(profile);
-    alert("Profile created. Please log-in with your new credentials.");
-    history.push("/sign-in");
-  }
+  useEffect(() => {
+    async function makeProfile() {
+      await createUser(profile);
+      alert("Profile created. Please log-in with your new credentials.");
+      history.push("/sign-in");
+    }
+    makeProfile();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [profileTrigger]);
 
   return (
     <div className="profile-master">
@@ -173,18 +178,18 @@ export default function Register(props) {
                 <option value="other">Other</option>
                 <option value="not-say">Prefer not to say</option>
               </select>
-                <label className="labelPassword" htmlFor="password">
-                  Password
-                </label>
-                <input
-                  className="password"
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Choose a password"
-                  value={profile.password}
-                  onChange={handleChange}
-                />
+              <label className="labelPassword" htmlFor="password">
+                Password
+              </label>
+              <input
+                className="password"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Choose a password"
+                value={profile.password}
+                onChange={handleChange}
+              />
             </div>
 
             <div className="profile-bday-box">
@@ -273,7 +278,7 @@ export default function Register(props) {
                   onChange={handleContact}
                 />
               </div>
-              </div>
+            </div>
           </div>
         </form>
       </div>
