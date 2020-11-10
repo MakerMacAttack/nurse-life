@@ -1,6 +1,6 @@
- .profile-master {
+.profile-master {
   width: 100vw;
-  height: 100vh;
+  height: 1100px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -8,8 +8,8 @@
 }
 
 .profile-master2 {
-  width: 90vw;
-  height: 93vh;
+  width: 850px;
+  height: 900px;
   border-radius: 2px;
   box-shadow: 1px 1px 10px 0;
   padding: 20px;
@@ -69,9 +69,8 @@
 .profile-updater {
   display: flex;
   flex-direction: column;
-  width: 80vw;
   margin: 0 auto;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .profile-name-box {
@@ -220,7 +219,7 @@ input {
   grid-area: b;
   display: grid;
   margin-bottom: 10px;
-  margin-left: -100px;
+  margin-right: -80px;
   grid-template-areas: "labelCity" "city";
 }
 
@@ -296,7 +295,7 @@ input {
   grid-area: y;
   display: grid;
   margin-bottom: 10px;
-  padding-right: 0px;
+  margin: auto;
   grid-template-areas: "labelEmail" "email";
 }
 
@@ -306,18 +305,31 @@ input {
   width: 300px;
   color: grey;
   margin-top: 05px;
+  margin-right: -68px;
   border-radius: 05px;
   border-color: lightgrey;
 }
 
+.delete-button {
+  border-radius: 4px;
+  text-decoration: none;
+  margin-left: -710px;
+  margin-top: 60px;
+}
+
+.delete-button:hover {
+  justify-content: center;
+  color: #199ff3;
+}
+
 @media screen and (max-width: 700px) {
   .profile-master {
-   grid-template-columns: repeat(2, 1fr);
-}
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 425px) {
- .profile-master {
-  grid-template-columns: 1fr;
-}
+  .profile-master {
+    grid-template-columns: 1fr;
+  }
 }

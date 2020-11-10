@@ -8,7 +8,7 @@
 }
 
 .profile-master2 {
-  width: 850px;
+  width: 60vw;
   height: 900px;
   border-radius: 2px;
   box-shadow: 1px 1px 10px 0;
@@ -142,7 +142,6 @@ input {
 .gender {
   padding: 10px;
   width: 325px;
-  /* margin-top: 15px; */
   margin: auto;
   margin-left: 68px;
   border-radius: 05px;
@@ -335,12 +334,13 @@ input {
   display: grid;
   margin-bottom: 10px;
   margin: auto;
-  margin-right: 55%;
+  margin-right: 430px;
   padding-right: 0px;
   grid-template-areas: "labelEmail" "email";
+  position: relative;
 }
 
-.email {
+/* .email {
   grid-area: email;
   padding: 10px;
   width: 300px;
@@ -348,7 +348,7 @@ input {
   margin-top: 05px;
   border-radius: 05px;
   border-color: lightgrey;
-}
+} */
 
 @media screen and (max-width: 700px) {
   .profile-master {
@@ -372,4 +372,10 @@ input {
  .profile-master2 {
   grid-template-columns: 1fr;
 }
+}
+
+@media screen and (min-width: 1600px) {
+  .profile-master2 {
+    font-family: Helvetica;
+  }
 }
