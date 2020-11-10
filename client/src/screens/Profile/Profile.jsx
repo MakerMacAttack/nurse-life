@@ -21,7 +21,7 @@ function Profile(props) {
   async function handleDelete() {
     localStorage.removeItem("loggedin");
     await deleteUser(props.user._id);
-    await props.set((prev) => !prev);
+    await props.set(null);
     history.push("/sign-in");
   }
 
